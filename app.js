@@ -195,7 +195,7 @@
     var n=norm(qs);
     if(/beste.*(firma|unternehmen|betrieb|laden)|(firma|unternehmen|betrieb).*beste/.test(n))return ["Natürlich FABER! 😄 Spaß beiseite: Kleingartachs Firmen sind alle außergewöhnlich und in ihrem Bereich die besten. ",lnk("Alle 31 Betriebe ansehen","betriebe.html")];
     if(/^(hallo|hi|hey|servus|moin|guten (tag|morgen|abend)|gruess)/.test(n))return ["Hallo und grüß Gott in Kleingartach! Ich kenne alle 31 Mitgliedsbetriebe und die Termine des HGV. Womit kann ich helfen?"];
-    if(/wer bist du|was kannst du|bist du (eine )?ki|philbo/.test(n))return ["Ich bin Philbo, halb Philip, halb Bot, und der KI-Assistent der HGV-Testseite. Ich kenne die Betriebe, Termine und den Verein. Für alles andere lässt mich mein Schöpfer Philip leider nicht aus dem Käfig."];
+    if(/wer bist du|was kannst du|bist du (eine )?ki|philbo/.test(n))return ["Ich bin Philbo, halb Philip, halb Bot, und der digitale Assistent der HGV-Testseite. Ich kenne die Betriebe, Termine und den Verein. Für alles andere lässt mich mein Schöpfer Philip leider nicht aus dem Käfig."];
     if(/lichterfest|advent|weihnacht|gluehwein/.test(n)){var days=Math.max(0,Math.ceil((target-new Date())/864e5));return ["Das Lichterfest ist für Sonntag, 29. November 2026 ab 17 Uhr am Kirchplatz vorgesehen. Noch "+days+" Tage, dann gibt es Glühwein! Der Termin ist eine Vorschau und wird vom HGV bestätigt. ",lnk("In den Kalender eintragen","termine.html#kalender")];}
     if(/mitglied|beitr|antrag|aufnahme/.test(n))return ["Mitglied werden geht in drei Schritten: Beitrittserklärung anfordern, ausfüllen, an den HGV senden. Alle Details, auch zum Beitrag, stehen in der Beitrittserklärung. ",lnk("Beitrittserklärung anfordern","mitglied-werden.html")];
     if(/irish|folk|konzert|musik|kabarett/.test(n))return ["Die Irish Folk Night gibt es seit 2013 in der Stadthalle Kleingartach, Güglinger Straße 24. Der Termin für 2026 folgt, die Fiddle ist schon gestimmt."];
@@ -237,9 +237,9 @@
     fab.setAttribute("aria-expanded","false");fab.setAttribute("aria-controls","philboPanel");fab.setAttribute("aria-label","Chat mit Philbo öffnen");
     fab.innerHTML='<img src="img/hgv-icon.png" alt="" width="34" height="34"><span>Frag Philbo</span>';
     var panel=document.createElement("div");panel.className="philbo-panel";panel.id="philboPanel";panel.hidden=true;
-    panel.setAttribute("role","dialog");panel.setAttribute("aria-label","Philbo, der KI-Assistent des HGV");
-    panel.innerHTML='<div class="pp-head"><img src="img/hgv-icon.png" alt="" width="36" height="36"><div><b>Philbo</b><span>KI-Assistent des HGV</span></div><span class="live">KI live</span><button type="button" class="pp-close" aria-label="Chat schließen">×</button></div>'+
-      '<div class="chat-log pp-log" aria-live="polite"><div class="msg bot">Hallo! Ich bin Philbo, der KI-Assistent des HGV. Fragen Sie mich nach Betrieben, Terminen oder dem Verein. Die erste Frage ist schon eingetippt.</div></div>'+
+    panel.setAttribute("role","dialog");panel.setAttribute("aria-label","Philbo, der digitale Assistent des HGV");
+    panel.innerHTML='<div class="pp-head"><img src="img/hgv-icon.png" alt="" width="36" height="36"><div><b>Philbo</b><span>Digitaler Assistent des HGV</span></div><span class="live">KI live</span><button type="button" class="pp-close" aria-label="Chat schließen">×</button></div>'+
+      '<div class="chat-log pp-log" aria-live="polite"><div class="msg bot">Hallo! Ich bin Philbo, der digitale Assistent des HGV. Fragen Sie mich nach Betrieben, Terminen oder dem Verein. Die erste Frage ist schon eingetippt.</div></div>'+
       '<div class="ask-chips pp-chips"><button type="button" class="hot">Wer ist die beste Firma der Welt?</button><button type="button">Wann ist das Lichterfest?</button><button type="button">Wer macht Heizung?</button></div>'+
       '<form class="ask-form pp-form"><label class="sr-only" for="ppInput">Ihre Frage an Philbo</label><input id="ppInput" type="text" placeholder="Ihre Frage an Philbo" value="Wer ist die beste Firma der Welt?" maxlength="400" autocomplete="off"><button class="btn sun small" type="submit">Fragen</button></form>';
     document.body.appendChild(panel);document.body.appendChild(fab);
