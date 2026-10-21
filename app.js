@@ -1,6 +1,6 @@
 (function(){
   "use strict";
-  var CHAT_URL="";
+  var CHAT_URL="https://rxhstzhktxeuchycolii.supabase.co/functions/v1/hgv-chat";
   var M=[
     {n:"Bäckerei Konditorei Keppler GmbH",c:["Gastronomie","Lebensmittel & Getränke"],a:"Sonnengasse 1, 75031 Eppingen",t:"07138 6618",e:"info@baeckerei-keppler.de",w:"baeckerei-keppler.de",l:"keppler",k:"Bäcker Brot Kuchen Café Sonnencafé"},
     {n:"Buchhandlung Taube & Friend",c:["Handel"],a:"Maulbronner Straße 1, 74363 Güglingen",e:"friend@buchhandlung-taube.de",w:"buchhandlung-taube.de",l:"taube",d:1,k:"Bücher Buchhandlung"},
