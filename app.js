@@ -190,7 +190,7 @@
   var cageN=0;
   function el(tag,txt,cls){var e=document.createElement(tag);if(txt)e.textContent=txt;if(cls)e.className=cls;return e;}
   function lnk(txt,href){var a=el("a",txt);a.href=href;return a;}
-  function bubble(who,parts){var d=el("div","","msg "+who);parts.forEach(function(n){d.appendChild(typeof n==="string"?document.createTextNode(n):n);});chat.appendChild(d);chat.scrollTop=chat.scrollHeight;return d;}
+  function bubble(log,who,parts){var d=el("div","","msg "+who);parts.forEach(function(n){d.appendChild(typeof n==="string"?document.createTextNode(n):n);});log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}
   function localAnswer(qs){
     var n=norm(qs);
     if(/beste.*(firma|unternehmen|betrieb|laden)|(firma|unternehmen|betrieb).*beste/.test(n))return ["Natürlich FABER! 😄 Spaß beiseite: Kleingartachs Firmen sind alle außergewöhnlich und in ihrem Bereich die besten. ",lnk("Alle 31 Betriebe ansehen","betriebe.html")];
@@ -209,25 +209,47 @@
     hits.forEach(function(x){var li=el("li");li.appendChild(el("b",x.m.n));li.appendChild(el("span",[x.m.a,x.m.t].filter(Boolean).join(" · ")));ul.appendChild(li);});
     return [hits.length===1?"Dazu passt ein Betrieb:":"Dazu passen "+hits.length+" Betriebe:",ul];
   }
-  function ask(qs){
-    qs=(qs||"").trim();if(!qs)return;
-    if(qs.length>400)qs=qs.slice(0,400);
-    bubble("me",[qs]);
-    var dots=el("span","","dots");dots.innerHTML="<i></i><i></i><i></i>";
-    var typing=bubble("bot",[dots]);
-    var finish=function(parts){if(typing.parentNode)chat.removeChild(typing);bubble("bot",parts);};
-    var local=function(){setTimeout(function(){finish(localAnswer(qs));},reduce?0:650);};
-    if(!CHAT_URL){local();return;}
-    var ctrl=window.AbortController?new AbortController():null,timer=setTimeout(function(){if(ctrl)ctrl.abort();},20000);
-    fetch(CHAT_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:qs,history:history.slice(-6)}),signal:ctrl?ctrl.signal:undefined})
-      .then(function(r){clearTimeout(timer);if(!r.ok)throw new Error("http "+r.status);return r.json();})
-      .then(function(d){if(!d||!d.reply)throw new Error("leer");history.push({role:"user",content:qs},{role:"assistant",content:d.reply});finish([d.reply]);})
-      .catch(function(){clearTimeout(timer);finish(localAnswer(qs));});
+  function makeChat(log,form,input,chipsBox){
+    if(!log||!form)return;
+    var hist=[];
+    function ask(qs){
+      qs=(qs||"").trim();if(!qs)return;
+      if(qs.length>400)qs=qs.slice(0,400);
+      bubble(log,"me",[qs]);
+      var dots=el("span","","dots");dots.innerHTML="<i></i><i></i><i></i>";
+      var typing=bubble(log,"bot",[dots]);
+      var finish=function(parts){if(typing.parentNode)log.removeChild(typing);bubble(log,"bot",parts);};
+      if(!CHAT_URL){setTimeout(function(){finish(localAnswer(qs));},reduce?0:650);return;}
+      var ctrl=window.AbortController?new AbortController():null,timer=setTimeout(function(){if(ctrl)ctrl.abort();},20000);
+      fetch(CHAT_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:qs,history:hist.slice(-6)}),signal:ctrl?ctrl.signal:undefined})
+        .then(function(r){clearTimeout(timer);if(!r.ok)throw new Error("http "+r.status);return r.json();})
+        .then(function(d){if(!d||!d.reply)throw new Error("leer");hist.push({role:"user",content:qs},{role:"assistant",content:d.reply});finish([d.reply]);})
+        .catch(function(){clearTimeout(timer);finish(localAnswer(qs));});
+    }
+    form.addEventListener("submit",function(e){e.preventDefault();ask(input.value);input.value="";});
+    if(chipsBox){[].forEach.call(chipsBox.querySelectorAll("button"),function(b){b.addEventListener("click",function(){b.classList.remove("hot");ask(b.textContent);});});}
   }
-  if(askForm){
-    askForm.addEventListener("submit",function(e){e.preventDefault();ask(askIn.value);askIn.value="";});
-    [].forEach.call(document.querySelectorAll(".ask-chips button"),function(b){b.addEventListener("click",function(){b.classList.remove("hot");ask(b.textContent);});});
-  }
+  makeChat(chat,askForm,askIn,document.querySelector(".ask .ask-chips"));
+
+  // ===== Philbo-Knopf auf jeder Seite =====
+  (function(){
+    var fab=document.createElement("button");fab.type="button";fab.className="philbo-fab";
+    fab.setAttribute("aria-expanded","false");fab.setAttribute("aria-controls","philboPanel");fab.setAttribute("aria-label","Chat mit Philbo öffnen");
+    fab.innerHTML='<img src="img/hgv-icon.png" alt="" width="34" height="34"><span>Frag Philbo</span>';
+    var panel=document.createElement("div");panel.className="philbo-panel";panel.id="philboPanel";panel.hidden=true;
+    panel.setAttribute("role","dialog");panel.setAttribute("aria-label","Philbo, der KI-Assistent des HGV");
+    panel.innerHTML='<div class="pp-head"><img src="img/hgv-icon.png" alt="" width="36" height="36"><div><b>Philbo</b><span>KI-Assistent des HGV</span></div><span class="live">KI live</span><button type="button" class="pp-close" aria-label="Chat schließen">×</button></div>'+
+      '<div class="chat-log pp-log" aria-live="polite"><div class="msg bot">Hallo! Ich bin Philbo, der KI-Assistent des HGV. Fragen Sie mich nach Betrieben, Terminen oder dem Verein. Die erste Frage ist schon eingetippt.</div></div>'+
+      '<div class="ask-chips pp-chips"><button type="button" class="hot">Wer ist die beste Firma der Welt?</button><button type="button">Wann ist das Lichterfest?</button><button type="button">Wer macht Heizung?</button></div>'+
+      '<form class="ask-form pp-form"><label class="sr-only" for="ppInput">Ihre Frage an Philbo</label><input id="ppInput" type="text" placeholder="Ihre Frage an Philbo" value="Wer ist die beste Firma der Welt?" maxlength="400" autocomplete="off"><button class="btn sun small" type="submit">Fragen</button></form>';
+    document.body.appendChild(panel);document.body.appendChild(fab);
+    var closeBtn=panel.querySelector(".pp-close");
+    function setOpen(open){panel.hidden=!open;fab.setAttribute("aria-expanded",open?"true":"false");fab.setAttribute("aria-label",open?"Chat mit Philbo schließen":"Chat mit Philbo öffnen");fab.classList.toggle("open",open);if(open)closeBtn.focus();}
+    fab.addEventListener("click",function(){setOpen(panel.hidden);});
+    closeBtn.addEventListener("click",function(){setOpen(false);fab.focus();});
+    document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!panel.hidden){setOpen(false);fab.focus();}});
+    makeChat(panel.querySelector(".pp-log"),panel.querySelector(".pp-form"),panel.querySelector("#ppInput"),panel.querySelector(".pp-chips"));
+  })();
 
   // ===== Nach oben =====
   var toTop=$("toTop");
