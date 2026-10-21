@@ -251,6 +251,32 @@
     makeChat(panel.querySelector(".pp-log"),panel.querySelector(".pp-form"),panel.querySelector("#ppInput"),panel.querySelector(".pp-chips"));
   })();
 
+  // ===== Google-Vorschau (SEO-Seite) =====
+  var sT=$("serpTitle"),sD=$("serpDesc"),sU=$("serpUrl");
+  if(sT){
+    var cut=function(t,n){return t.length>n?t.slice(0,n-1).replace(/\s+\S*$/,"")+" …":t;};
+    var lamp=function(el,len,lo,hi){el.textContent=len+" Zeichen";el.className="serp-count "+(len===0?"bad":len>hi?"warn":len<lo?"warn":"ok");};
+    var upd=function(){
+      $("serpTitleOut").textContent=cut(sT.value,60)||"Ihr Seitentitel";
+      $("serpDescOut").textContent=cut(sD.value,158)||"Ihre Beschreibung erscheint hier.";
+      $("serpUrlOut").textContent=sU.value;
+      lamp($("serpTitleCount"),sT.value.length,30,60);lamp($("serpDescCount"),sD.value.length,110,158);
+    };
+    [sT,sD,sU].forEach(function(x){x.addEventListener("input",upd);});upd();
+  }
+  // ===== Checkliste (SEO-Seite) =====
+  var checks=$("checks");
+  if(checks){
+    var btns=[].slice.call(checks.querySelectorAll("button")),saved={};
+    try{saved=JSON.parse(localStorage.getItem("hgv-seo-checks")||"{}");}catch(e){saved={};}
+    var score=function(){var n=btns.filter(function(b){return b.getAttribute("aria-pressed")==="true";}).length;$("checkScore").textContent=n+" von "+btns.length+(n===btns.length?" 🎉":"");};
+    btns.forEach(function(b){
+      if(saved[b.getAttribute("data-k")])b.setAttribute("aria-pressed","true");
+      b.addEventListener("click",function(){var on=b.getAttribute("aria-pressed")!=="true";b.setAttribute("aria-pressed",on?"true":"false");saved[b.getAttribute("data-k")]=on;try{localStorage.setItem("hgv-seo-checks",JSON.stringify(saved));}catch(e){}score();});
+    });
+    score();
+  }
+
   // ===== Nach oben =====
   var toTop=$("toTop");
   if(toTop){window.addEventListener("scroll",function(){toTop.hidden=window.scrollY<900;},{passive:true});}
