@@ -3,430 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Testseite: Entwurf der neuen Website des Handels- und Gewerbevereins Kleingartach e. V.">
-<link rel="icon" href="img/hgv-icon.png">
-<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>HGV Kleingartach</title>
+<meta name="description" content="Testseite der neuen Website des Handels- und Gewerbevereins Kleingartach e. V.">
 <meta name="robots" content="noindex, nofollow">
-<style>@font-face{font-family:'Figtree';font-style:normal;font-weight:300 900;font-display:swap;src:url(fonts/figtree-latin.woff2) format('woff2')}</style>
-<style>
-/* Layout: helle, klare Vereinsseite in den echten HGV-Farben (Petrol, Sonnengelb, Marine). Foto-Collage im Hero, Inhalte in ruhigen 72rem-Bahnen, Wechsel weiss / zartes Petrol / Marine-Band. */
-:root{
-  --bg:#FFFFFF;--bg-soft:#F1F6F7;--card:#FFFFFF;
-  --ink:#0E2433;--ink-soft:#4C5E6A;--line:#DCE5E7;
-  --brand:#009BA0;--brand-strong:#00757A;--brand-deep:#005A5E;--on-brand:#FFFFFF;--link:#00757A;
-  --sun:#F5A500;--sun-soft:#FFF3D6;--on-sun:#0E2433;
-  --band:#0B2638;--on-band:#E9F1F3;--on-band-soft:#A8BCC6;
-  --tile:#FFFFFF;--tile-dark:#000000;--logo-chip:transparent;
-  --header-bg:rgba(255,255,255,.93);
-  --shadow:0 22px 44px -22px rgba(14,36,51,.45);--shadow-sm:0 6px 18px -10px rgba(14,36,51,.35);
-  --focus:#F5A500;--backdrop:rgba(8,20,28,.62);
-  --font:"Figtree","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#0A1821;--bg-soft:#0F222D;--card:#132A36;
-    --ink:#E6EEF1;--ink-soft:#A3B5BF;--line:#233A46;
-    --brand:#2BB8BD;--brand-strong:#00757A;--brand-deep:#0B3F47;--on-brand:#FFFFFF;--link:#5ED0D4;
-    --sun:#F7B52A;--sun-soft:#33290F;--on-sun:#0E2433;
-    --band:#06121A;--on-band:#E6EEF1;--on-band-soft:#97AAB4;
-    --tile:#FFFFFF;--tile-dark:#000000;--logo-chip:#FFFFFF;
-    --header-bg:rgba(10,24,33,.93);
-    --shadow:0 22px 44px -22px rgba(0,0,0,.8);--shadow-sm:0 6px 18px -10px rgba(0,0,0,.7);
-    --focus:#F7B52A;--backdrop:rgba(0,0,0,.72);
-    color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#0A1821;--bg-soft:#0F222D;--card:#132A36;
-  --ink:#E6EEF1;--ink-soft:#A3B5BF;--line:#233A46;
-  --brand:#2BB8BD;--brand-strong:#00757A;--brand-deep:#0B3F47;--on-brand:#FFFFFF;--link:#5ED0D4;
-  --sun:#F7B52A;--sun-soft:#33290F;--on-sun:#0E2433;
-  --band:#06121A;--on-band:#E6EEF1;--on-band-soft:#97AAB4;
-  --tile:#FFFFFF;--tile-dark:#000000;--logo-chip:#FFFFFF;
-  --header-bg:rgba(10,24,33,.93);
-  --shadow:0 22px 44px -22px rgba(0,0,0,.8);--shadow-sm:0 6px 18px -10px rgba(0,0,0,.7);
-  --focus:#F7B52A;--backdrop:rgba(0,0,0,.72);
-  color-scheme:dark;
-}
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:8rem}
-@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
-body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:1.0625rem;line-height:1.6;margin:0;-webkit-font-smoothing:antialiased}
-h1,h2,h3{margin:0;line-height:1.12;text-wrap:balance;font-weight:800;letter-spacing:-.02em}
-h1{font-size:clamp(2.5rem,5.6vw,4.4rem);letter-spacing:-.035em;line-height:1.02}
-h2{font-size:clamp(1.85rem,3.4vw,2.6rem)}
-h3{font-size:1.2rem;font-weight:700;letter-spacing:-.01em}
-p{margin:0}
-a{color:var(--link);text-underline-offset:.18em}
-img{display:block;max-width:100%}
-:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
-button{font:inherit;color:inherit}
-.wrap{max-width:74rem;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.skip{position:absolute;left:1rem;top:-5rem;z-index:200;background:var(--brand-strong);color:var(--on-brand);padding:.6rem 1rem;border-radius:8px}
-.skip:focus{top:1rem}
-.ico{width:1.05em;height:1.05em;flex:none;vertical-align:-.15em}
-
-/* Buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:3rem;padding:.65rem 1.35rem;border-radius:999px;border:2px solid var(--brand-strong);background:var(--brand-strong);color:var(--on-brand);font-weight:700;text-decoration:none;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease}
-.btn:hover{transform:translateY(-1px);box-shadow:var(--shadow-sm)}
-.btn.outline{background:transparent;color:var(--link);border-color:var(--line)}
-.btn.sun{background:var(--sun);border-color:var(--sun);color:var(--on-sun)}
-.btn.small{min-height:2.5rem;padding:.4rem 1rem;font-size:.95rem}
-
-/* Testband */
-.testband{background:var(--sun);color:var(--on-sun);font-size:.88rem;font-weight:600}
-.testband .wrap{display:flex;flex-wrap:wrap;gap:.2rem .9rem;align-items:center;padding-block:.45rem}
-.testband b{background:var(--band);color:var(--sun);font-weight:800;letter-spacing:.12em;font-size:.76rem;padding:.12rem .6rem;border-radius:999px}
-
-/* Header */
-.site-header{position:relative;z-index:60;background:var(--header-bg);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
-.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.6rem}
-.brand{display:flex;align-items:center;background:var(--logo-chip);border-radius:10px;padding:.2rem .35rem}
-.brand img{height:3rem;width:auto}
-.nav ul{list-style:none;margin:0;padding:0;display:flex;align-items:center;gap:.15rem}
-.nav a{display:block;padding:.55rem .8rem;border-radius:999px;color:var(--ink);text-decoration:none;font-weight:600;font-size:.98rem}
-.nav a:hover{background:var(--bg-soft)}
-.nav a[aria-current="true"]{color:var(--link);background:var(--bg-soft)}
-.nav a.cta{background:var(--sun);color:var(--on-sun);font-weight:800;margin-left:.4rem}
-.nav-toggle{display:none;align-items:center;gap:.5rem;min-height:2.9rem;padding:.4rem 1rem;border:2px solid var(--line);border-radius:999px;background:transparent;font-weight:700;cursor:pointer}
-@media (max-width:1100px){
-  .nav-toggle{display:inline-flex}
-  .nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
-  .nav[data-open="true"]{display:block}
-  .nav ul{flex-direction:column;align-items:stretch;gap:.25rem;padding-block:.75rem 1.25rem;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-  .nav a{padding:.85rem 1rem;font-size:1.1rem}
-  .nav a.cta{margin:.5rem 0 0;text-align:center}
-}
-
-/* Hero */
-.hero .wrap{display:grid;gap:2.5rem;padding-block:3.5rem 4.5rem;align-items:center}
-@media (min-width:880px){.hero .wrap{grid-template-columns:1.02fr .98fr;gap:3.5rem}}
-.hero-copy{display:grid;gap:1.4rem;min-width:0}
-.pill{justify-self:start;display:inline-flex;align-items:center;gap:.5rem;background:var(--sun-soft);color:var(--ink);font-weight:700;font-size:.9rem;padding:.35rem .85rem .35rem .4rem;border-radius:999px}
-.pill span{white-space:nowrap;background:var(--sun);color:var(--on-sun);border-radius:999px;padding:.1rem .55rem;font-weight:800}
-.hero h1 .mark{text-decoration:underline;text-decoration-color:var(--sun);text-decoration-thickness:.12em;text-underline-offset:.1em;text-decoration-skip-ink:none}
-.hero .lead{font-size:1.22rem;color:var(--ink-soft);max-width:34rem}
-.finder{display:grid;gap:.7rem;max-width:34rem}
-.finder label{font-weight:700;font-size:.95rem}
-.finder-row{display:flex;gap:.5rem;background:var(--card);border:2px solid var(--line);border-radius:999px;padding:.3rem;box-shadow:var(--shadow-sm)}
-.finder-row:focus-within{border-color:var(--brand)}
-.finder-row svg{width:1.3rem;height:1.3rem;color:var(--ink-soft);margin:auto 0 auto .75rem;flex:none}
-.finder-row input{flex:1;min-width:0;border:0;background:transparent;color:var(--ink);font:inherit;font-size:1.05rem;padding:.55rem .25rem;outline:none}
-.quick{display:flex;flex-wrap:wrap;gap:.45rem;align-items:center;font-size:.92rem;color:var(--ink-soft)}
-.quick button{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:.3rem .8rem;min-height:2.25rem;cursor:pointer;font-weight:600;font-size:.9rem}
-.quick button:hover{border-color:var(--brand);color:var(--link)}
-.hero-media{position:relative;min-width:0;padding-bottom:3rem}
-.hero-main{width:82%;margin-left:auto;aspect-ratio:4/5;border-radius:28px;overflow:hidden;box-shadow:var(--shadow)}
-.hero-main img,.hero-second img{width:100%;height:100%;object-fit:cover}
-.hero-second{position:absolute;left:0;bottom:0;width:48%;aspect-ratio:4/3;border-radius:20px;overflow:hidden;border:6px solid var(--bg);box-shadow:var(--shadow)}
-.next{position:absolute;left:0;top:7%;width:min(19.5rem,66%);background:var(--card);border-radius:18px;padding:1rem 1.1rem;box-shadow:var(--shadow);display:grid;gap:.25rem}
-.next small{font-size:.78rem;font-weight:800;color:var(--link);text-transform:uppercase;letter-spacing:.08em}
-.next b{font-size:1.15rem;line-height:1.2}
-.next span{font-size:.92rem;color:var(--ink-soft)}
-.next em{font-style:normal;font-size:.78rem;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:.4rem;margin-top:.3rem}
-.photo-credit{font-size:.78rem;color:var(--ink-soft);text-align:right;margin-top:.5rem}
-@media (max-width:879px){
-  .hero .wrap{padding-block:2rem 3rem}
-  .hero-media{padding-bottom:0}
-  .hero-main{width:100%;aspect-ratio:4/3}
-  .hero-main img{object-position:50% 38%}
-  .hero-second{display:none}
-  .next{position:relative;left:auto;top:auto;width:auto;margin:-2.5rem 1rem 0}
-}
-
-/* Zahlen */
-.numbers{background:var(--band);color:var(--on-band)}
-.numbers .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));gap:1.75rem 2rem;padding-block:2.5rem}
-.numbers b{display:block;font-size:clamp(2.3rem,4vw,3rem);font-weight:800;line-height:1;color:var(--sun);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
-.numbers span{display:block;margin-top:.45rem;color:var(--on-band-soft);font-size:.98rem}
-
-/* Sektionen */
-.section{padding-block:5rem}
-.section.soft{background:var(--bg-soft)}
-.head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:1rem 2rem;margin-bottom:2.25rem}
-.head > div{display:grid;gap:.6rem;max-width:42rem;min-width:0}
-.head p{color:var(--ink-soft);font-size:1.1rem}
-.kicker{font-size:.9rem;font-weight:800;color:var(--link)}
-
-/* Termine */
-.feature{display:grid;background:var(--card);border-radius:24px;overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--line)}
-@media (min-width:760px){.feature{grid-template-columns:.9fr 1.1fr}}
-.feature-img{min-height:16rem;position:relative}
-.feature-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.feature-body{padding:2rem;display:grid;gap:1rem;align-content:center}
-.feature-body h3{font-size:clamp(1.6rem,2.6vw,2.1rem);font-weight:800}
-.facts{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
-.facts li{display:flex;gap:.6rem;align-items:flex-start}
-.facts .ico{color:var(--brand);margin-top:.2rem}
-.badge{justify-self:start;display:inline-block;font-size:.8rem;font-weight:700;padding:.2rem .65rem;border-radius:999px;background:var(--sun-soft);color:var(--ink)}
-.events{list-style:none;margin:1.5rem 0 0;padding:0;display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(20rem,1fr))}
-.event{display:grid;grid-template-columns:4.6rem 1fr;gap:1rem;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.1rem;min-width:0}
-.date{background:var(--brand-strong);color:var(--on-brand);border-radius:14px;display:grid;place-content:center;text-align:center;aspect-ratio:1;line-height:1}
-.date b{font-size:1.55rem;font-weight:800;font-variant-numeric:tabular-nums}
-.date span{font-size:.75rem;font-weight:700;margin-top:.25rem;opacity:.9}
-.event h3{margin-bottom:.2rem}
-.event p{color:var(--ink-soft);font-size:.95rem}
-.event .badge{margin-top:.55rem}
-
-/* Galerie */
-.gallery{display:grid;gap:.9rem;grid-template-columns:repeat(4,1fr);margin-top:3rem}
-.gallery figure{margin:0;display:grid;gap:.45rem;min-width:0}
-.gallery img{aspect-ratio:3/4;object-fit:cover;border-radius:16px;width:100%}
-.gallery figcaption{font-size:.88rem;color:var(--ink-soft)}
-.gallery-head{display:flex;justify-content:space-between;align-items:end;gap:1rem;margin-top:3.5rem}
-.gallery-head + .gallery{margin-top:1.25rem}
-@media (max-width:760px){.gallery{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:68%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.5rem}.gallery figure{scroll-snap-align:start}}
-
-/* Aktuelles */
-.news{display:grid;gap:1.4rem;grid-template-columns:repeat(auto-fill,minmax(19rem,1fr))}
-.post{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:grid;grid-template-rows:auto 1fr;grid-template-columns:minmax(0,1fr);min-width:0}
-.post-img.contain{background:var(--tile)}
-.post-img.contain img{object-fit:contain}
-.post-img{aspect-ratio:16/10;overflow:hidden;background:var(--bg-soft)}
-.post-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
-.post:hover .post-img img{transform:scale(1.03)}
-.post-body{padding:1.25rem 1.3rem 1.4rem;display:grid;gap:.6rem;align-content:start}
-.post time{font-size:.85rem;color:var(--ink-soft);font-weight:600}
-.post p{color:var(--ink-soft);font-size:.98rem}
-.more{justify-self:start;background:none;border:0;padding:0;color:var(--link);font-weight:700;cursor:pointer;display:inline-flex;gap:.35rem;align-items:center;min-height:2.4rem}
-.more:hover{text-decoration:underline}
-
-/* Mitglieder */
-.toolbar{display:grid;gap:1rem;margin-bottom:1.75rem}
-.search{display:flex;align-items:center;gap:.5rem;max-width:38rem;background:var(--card);border:2px solid var(--line);border-radius:999px;padding:.3rem .4rem .3rem .9rem}
-.search:focus-within{border-color:var(--brand)}
-.search svg{width:1.25rem;height:1.25rem;color:var(--ink-soft);flex:none}
-.search input{flex:1;min-width:0;border:0;background:transparent;color:var(--ink);font:inherit;font-size:1.05rem;padding:.55rem .25rem;outline:none}
-.clear{border:0;background:var(--bg-soft);border-radius:999px;min-height:2.3rem;padding:.2rem .85rem;cursor:pointer;font-weight:600;font-size:.9rem}
-.chips{display:flex;flex-wrap:wrap;gap:.45rem}
-.chip{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:.35rem .9rem;min-height:2.5rem;cursor:pointer;font-weight:600;font-size:.93rem}
-.chip:hover{border-color:var(--brand)}
-.chip[aria-pressed="true"]{background:var(--brand-strong);border-color:var(--brand-strong);color:var(--on-brand)}
-.count{color:var(--ink-soft);font-weight:600;font-variant-numeric:tabular-nums}
-.members{list-style:none;margin:0;padding:0;display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(16.5rem,1fr))}
-.member{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:grid;grid-template-rows:auto 1fr;grid-template-columns:minmax(0,1fr);min-width:0;transition:box-shadow .2s ease,transform .2s ease}
-.member:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px)}
-.tile{position:relative;background:var(--tile);aspect-ratio:16/8;display:grid;place-items:center;border-bottom:1px solid var(--line)}
-.tile.dark{background:var(--tile-dark)}
-.tile img{position:absolute;top:14px;left:18px;width:calc(100% - 36px);height:calc(100% - 28px);object-fit:contain}
-.mono{width:4rem;height:4rem;border-radius:50%;background:var(--brand-strong);color:var(--on-brand);display:grid;place-items:center;font-weight:800;font-size:1.4rem;flex:none;line-height:1}
-.m-body{padding:1rem 1.1rem 1.15rem;display:grid;gap:.4rem;align-content:start}
-.m-cat{font-size:.78rem;font-weight:700;color:var(--link)}
-.m-body h3{font-size:1.08rem;line-height:1.25}
-.m-addr{font-size:.92rem;color:var(--ink-soft)}
-.m-line{display:flex;align-items:center;gap:.45rem;font-size:.95rem;min-width:0;font-variant-numeric:tabular-nums}
-.m-line .ico{color:var(--brand)}
-.m-line .val{user-select:all;overflow-wrap:anywhere;min-width:0}
-.copy{margin-left:auto;flex:none;border:1px solid var(--line);background:transparent;border-radius:999px;padding:.15rem .6rem;min-height:2rem;font-size:.78rem;font-weight:600;color:var(--ink-soft);cursor:pointer}
-.copy:hover{border-color:var(--brand);color:var(--link)}
-.copy[data-done="true"]{background:var(--brand-strong);border-color:var(--brand-strong);color:var(--on-brand)}
-.m-links{display:flex;gap:1rem;margin-top:.35rem;font-size:.93rem;font-weight:700}
-.m-links a{display:inline-flex;gap:.3rem;align-items:center;text-decoration:none;min-height:2rem}
-.m-links a:hover{text-decoration:underline}
-.empty{padding:2rem;text-align:center;color:var(--ink-soft);border:2px dashed var(--line);border-radius:18px}
-
-/* Verein */
-.about{display:grid;gap:3rem;align-items:start}
-@media (min-width:900px){.about{grid-template-columns:1fr 1fr}}
-.about-copy{display:grid;gap:1.1rem;min-width:0}
-.about-copy p{color:var(--ink-soft);max-width:36rem}
-.about figure{margin:0;display:grid;gap:.5rem;min-width:0}
-.about figure img{border-radius:22px;aspect-ratio:4/3;object-fit:cover;width:100%}
-.about figcaption{font-size:.88rem;color:var(--ink-soft)}
-.board{display:flex;align-items:center;gap:1rem;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1rem 1.15rem;max-width:30rem}
-.board .mono{width:3.25rem;height:3.25rem;font-size:1.05rem}
-.board b{display:block}
-.board span{font-size:.9rem;color:var(--ink-soft)}
-.doing{list-style:none;margin:3.5rem 0 0;padding:0;display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(15.5rem,1fr))}
-.doing li{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.15rem;display:grid;gap:.35rem;align-content:start}
-.doing svg{width:1.6rem;height:1.6rem;color:var(--brand)}
-.doing b{font-size:1.05rem}
-.doing p{color:var(--ink-soft);font-size:.94rem}
-.timeline{list-style:none;margin:1.5rem 0 0;padding:0;display:grid;gap:0;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr))}
-.timeline li{position:relative;padding:1.4rem 1.25rem 1.25rem 0;border-top:3px solid var(--line);min-width:0}
-.timeline li::before{content:"";position:absolute;top:-.6rem;left:0;width:1rem;height:1rem;border-radius:50%;background:var(--sun);border:3px solid var(--bg-soft)}
-.timeline b{display:block;font-size:1.5rem;font-weight:800;color:var(--link);font-variant-numeric:tabular-nums}
-.timeline p{color:var(--ink-soft);font-size:.95rem}
-
-/* Mitglied werden */
-.join{background:var(--brand-deep);color:var(--on-brand)}
-.join .wrap{display:grid;gap:3rem;padding-block:5rem;align-items:start}
-@media (min-width:900px){.join .wrap{grid-template-columns:1.05fr .95fr}}
-.join h2{color:var(--on-brand)}
-.join .intro{font-size:1.15rem;opacity:.92;max-width:36rem;margin-top:.9rem}
-.benefits{list-style:none;margin:2rem 0 0;padding:0;display:grid;gap:1.1rem}
-.benefits li{display:grid;grid-template-columns:2.25rem 1fr;gap:.85rem}
-.benefits .dot{width:2.25rem;height:2.25rem;border-radius:50%;background:var(--sun);color:var(--on-sun);display:grid;place-items:center}
-.benefits .dot svg{width:1.15rem;height:1.15rem}
-.benefits b{display:block;font-size:1.08rem}
-.benefits p{opacity:.88;font-size:.97rem}
-.steps{margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.2);font-size:.97rem;opacity:.95}
-.steps b{display:block;margin-bottom:.35rem}
-.form{background:var(--card);color:var(--ink);border-radius:24px;padding:1.75rem;display:grid;gap:1rem;box-shadow:var(--shadow)}
-.form h3{font-size:1.45rem;font-weight:800}
-.form > p{color:var(--ink-soft);font-size:.95rem}
-.form label{display:grid;gap:.35rem;font-weight:700;font-size:.95rem}
-.form input,.form textarea{font:inherit;color:var(--ink);background:var(--bg);border:2px solid var(--line);border-radius:12px;padding:.65rem .85rem;min-height:3rem;width:100%}
-.form input:focus,.form textarea:focus{border-color:var(--brand);outline:none}
-.form textarea{min-height:6.5rem;resize:vertical}
-.grid2{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr))}
-.notice{background:var(--sun-soft);color:var(--ink);border-radius:12px;padding:.8rem 1rem;font-size:.95rem}
-.form .fine{font-size:.82rem;color:var(--ink-soft)}
-
-/* Kontakt */
-.contact{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr))}
-.c-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.4rem;display:grid;gap:.6rem;align-content:start;min-width:0}
-.c-card .ico{width:1.6rem;height:1.6rem;color:var(--brand)}
-.c-card h3{font-size:1.1rem}
-.c-card p{color:var(--ink-soft)}
-
-/* Footer */
-.site-footer{background:var(--band);color:var(--on-band-soft);font-size:.93rem}
-.site-footer .wrap{display:grid;gap:1.5rem;padding-block:2.5rem;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));align-items:start}
-.site-footer .f-brand{display:flex;gap:.8rem;align-items:center;color:var(--on-band)}
-.site-footer .f-brand img{width:2.75rem;height:2.75rem;background:#FFFFFF;border-radius:50%;padding:.2rem}
-.site-footer b{color:var(--on-band)}
-.site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.4rem}
-.site-footer button,.site-footer a{background:none;border:0;padding:0;color:var(--on-band);font:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:.2em}
-
-/* Dialoge */
-dialog{border:0;padding:0;background:var(--card);color:var(--ink);width:min(46rem,calc(100% - 2rem));border-radius:22px;box-shadow:var(--shadow)}
-dialog::backdrop{background:var(--backdrop)}
-.d-inner{display:grid;gap:1rem;padding:1.75rem;max-height:84vh;overflow:auto}
-.d-inner img{border-radius:14px;width:100%;max-height:22rem;object-fit:cover}
-.d-inner h2{font-size:1.7rem}
-.d-inner h3{font-size:1.05rem;margin-top:.4rem}
-.d-inner p{color:var(--ink)}
-.d-inner time{color:var(--ink-soft);font-weight:600;font-size:.9rem}
-.d-close{justify-self:end;position:sticky;top:0}
-
-/* v3: Top-Leiste */
-.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:60}
-.theme-btn{flex:none;width:2.75rem;height:2.75rem;border-radius:50%;border:2px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;display:grid;place-items:center;margin-left:.5rem}
-.theme-btn svg{width:1.2rem;height:1.2rem}
-.nav{margin-left:auto;order:2}.theme-btn{order:3}.nav-toggle{order:4}
-@media (max-width:1100px){.theme-btn{margin-left:auto}}
-
-/* Logo-Band */
-.logos{padding-block:2.25rem;border-bottom:1px solid var(--line)}
-.logos-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:1.1rem;flex-wrap:wrap}
-.logos-head a{font-weight:700}
-.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
-.track{display:flex;gap:1rem;width:max-content;animation:marquee 70s linear infinite}
-.marquee:hover .track{animation-play-state:paused}
-.track a{flex:none;width:10.5rem;height:5.5rem;background:var(--tile);border:1px solid var(--line);border-radius:16px;display:grid;place-items:center;padding:.7rem;transition:transform .2s ease}
-.track a.dark{background:var(--tile-dark)}
-.track a:hover{transform:translateY(-3px)}
-.track img{max-width:100%;max-height:100%;object-fit:contain}
-@keyframes marquee{to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion: reduce){.marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none}.track{animation:none}}
-
-/* Countdown */
-.countdown{display:flex;gap:.55rem;flex-wrap:wrap}
-.countdown div{background:var(--bg-soft);border-radius:14px;padding:.55rem .75rem;min-width:4.4rem;text-align:center;display:grid}
-.countdown b{font-size:1.65rem;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.1;color:var(--link)}
-.countdown span{font-size:.75rem;color:var(--ink-soft);font-weight:600}
-.cd-label{font-size:.85rem;color:var(--ink-soft);font-weight:600}
-
-/* Jahresrad */
-.year{display:grid;gap:2rem;align-items:center;margin-top:3.5rem;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:1.75rem}
-@media (min-width:860px){.year{grid-template-columns:1fr 1fr;padding:2.5rem}}
-.year-copy{display:grid;gap:.6rem;align-content:start;min-width:0}
-.year-copy h3{font-size:1.6rem;font-weight:800}
-.year-copy > p{color:var(--ink-soft)}
-#yearWheel{width:100%;max-width:400px;height:auto;justify-self:center}
-.seg{fill:var(--bg-soft);stroke:var(--card);stroke-width:2;cursor:pointer;transition:fill .2s ease}
-.seg.has{fill:var(--brand-strong)}
-.seg.sel{fill:var(--sun)}
-#yearWheel g:hover .seg{opacity:.85}
-#yearWheel g:focus{outline:none}
-#yearWheel g:focus-visible .seg{stroke:var(--focus);stroke-width:4}
-.seg-l{fill:var(--ink-soft);font:600 13px var(--font);pointer-events:none}
-.seg-l.has{fill:var(--on-brand)}
-.seg-l.sel{fill:var(--on-sun)}
-.hub{fill:var(--card)}
-.hub-m{fill:var(--ink);font:800 26px var(--font)}
-.hub-s{fill:var(--ink-soft);font:500 14px var(--font)}
-.year-detail{display:grid;gap:.75rem;margin-top:.75rem}
-.year-detail h4{margin:0;font-size:1.15rem}
-.yd{border-left:3px solid var(--sun);padding:.2rem 0 .2rem .9rem;display:grid;gap:.1rem}
-.yd span{color:var(--ink-soft);font-size:.95rem}
-
-/* Frag den HGV */
-.ask{background:var(--band);color:var(--on-band)}
-.ask .wrap{display:grid;gap:2.5rem;padding-block:5rem;align-items:center}
-@media (min-width:900px){.ask .wrap{grid-template-columns:.9fr 1.1fr;gap:4rem}}
-.ask h2{color:var(--on-band)}
-.ask-copy{display:grid;gap:1rem;min-width:0}
-.ask-copy p{color:var(--on-band-soft);font-size:1.12rem;max-width:34rem}
-.kicker.on-dark{color:var(--sun)}
-.ask-points{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}
-.ask-points li{padding-left:1.6rem;position:relative}
-.ask-points li::before{content:"";position:absolute;left:0;top:.5rem;width:.7rem;height:.7rem;border-radius:50%;background:var(--sun)}
-.chat{background:var(--card);color:var(--ink);border-radius:24px;box-shadow:var(--shadow);display:grid;min-width:0;overflow:hidden}
-.chat-head{display:flex;gap:.75rem;align-items:center;padding:1rem 1.25rem;border-bottom:1px solid var(--line)}
-.chat-head img{border-radius:50%;background:var(--tile);padding:2px}
-.chat-head b{display:block}
-.chat-head span{font-size:.85rem;color:var(--ink-soft)}
-.chat-head .live{margin-left:auto;font-size:.75rem;font-weight:800;color:var(--on-sun);background:var(--sun);border-radius:999px;padding:.15rem .6rem}
-.chat-log{height:21rem;overflow-y:auto;padding:1.25rem;display:flex;flex-direction:column;gap:.75rem;background:var(--bg-soft)}
-.msg{max-width:88%;padding:.7rem .95rem;border-radius:16px;font-size:.98rem;line-height:1.45;overflow-wrap:anywhere}
-.msg.bot{align-self:flex-start;background:var(--card);border:1px solid var(--line);border-bottom-left-radius:4px}
-.msg.me{align-self:flex-end;background:var(--brand-strong);color:var(--on-brand);border-bottom-right-radius:4px}
-.msg a{color:var(--link);font-weight:700}
-.msg .hits{list-style:none;margin:.5rem 0 0;padding:0;display:grid;gap:.5rem}
-.msg .hits li{display:grid;border-left:3px solid var(--brand);padding-left:.6rem}
-.msg .hits span{font-size:.88rem;color:var(--ink-soft)}
-.dots{display:inline-flex;gap:.25rem}
-.dots i{width:.45rem;height:.45rem;border-radius:50%;background:var(--ink-soft);animation:blink 1s infinite}
-.dots i:nth-child(2){animation-delay:.15s}.dots i:nth-child(3){animation-delay:.3s}
-@keyframes blink{50%{opacity:.25}}
-.ask-chips{display:flex;flex-wrap:wrap;gap:.45rem;padding:.9rem 1.25rem 0}
-.ask-chips button{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:.35rem .85rem;min-height:2.3rem;cursor:pointer;font-weight:600;font-size:.88rem}
-.ask-chips button:hover{border-color:var(--brand);color:var(--link)}
-.ask-form{display:flex;gap:.5rem;padding:.9rem 1.25rem 1.25rem}
-.ask-form input{flex:1;min-width:0;border:2px solid var(--line);border-radius:999px;padding:.6rem 1rem;font:inherit;background:var(--bg);color:var(--ink)}
-.ask-form input:focus{border-color:var(--brand);outline:none}
-
-/* Ausblick */
-.voucher{display:grid;gap:2.5rem;align-items:center;background:var(--bg-soft);border-radius:28px;padding:2rem;margin-bottom:3.5rem}
-@media (min-width:860px){.voucher{grid-template-columns:.9fr 1.1fr;padding:3rem}}
-.voucher-card{position:relative;overflow:hidden;aspect-ratio:1.6/1;max-width:26rem;width:100%;justify-self:center;border-radius:22px;padding:1.4rem 1.6rem;color:var(--on-brand);background:linear-gradient(135deg,var(--brand-strong),var(--brand-deep));box-shadow:var(--shadow);display:grid;grid-template-rows:auto 1fr auto auto;transform:rotate(-3deg);transition:transform .4s ease}
-.voucher-card:hover{transform:rotate(0) scale(1.02)}
-.voucher-card::after{content:"";position:absolute;right:-16%;top:-34%;width:68%;aspect-ratio:1;border-radius:50%;border:18px solid var(--sun);opacity:.4}
-.vc-top{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1}
-.vc-top img{background:var(--tile);border-radius:50%;padding:3px}
-.vc-top span{font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem}
-.voucher-card b{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;letter-spacing:-.03em;align-self:end;line-height:1}
-.vc-sub{font-size:.85rem;opacity:.92}
-.vc-foot{display:flex;justify-content:space-between;align-items:end;margin-top:.8rem;font-size:.78rem;opacity:.95}
-.vc-val{font-size:1.9rem;font-weight:800;color:var(--sun);line-height:1}
-.voucher-copy{display:grid;gap:.9rem;min-width:0}
-.voucher-copy h3{font-size:clamp(1.5rem,2.6vw,2rem);font-weight:800}
-.voucher-copy > p{color:var(--ink-soft)}
-.idea-groups{display:grid;gap:2rem}
-@media (min-width:980px){.idea-groups{grid-template-columns:repeat(3,1fr)}}
-.idea-group{display:grid;gap:1rem;align-content:start;min-width:0}
-.idea-group h3{font-size:1.25rem;padding-bottom:.6rem;border-bottom:2px solid var(--line)}
-.ideas{list-style:none;margin:0;padding:0;display:grid;gap:.8rem}
-.idea{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1rem 1.1rem;display:grid;gap:.3rem;transition:transform .2s ease,box-shadow .2s ease}
-.idea:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm)}
-.idea b{font-size:1.05rem}
-.idea p{color:var(--ink-soft);font-size:.94rem}
-.ph{justify-self:start;font-size:.72rem;font-weight:800;padding:.15rem .6rem;border-radius:999px}
-.ph.p1{background:var(--brand-strong);color:var(--on-brand)}
-.ph.p2{background:var(--sun);color:var(--on-sun)}
-.ph.p3{border:1.5px solid var(--line);color:var(--ink-soft)}
-.legend{margin-top:1.75rem;color:var(--ink-soft);font-size:.9rem}
-.tb-short{display:none}
-@media (max-width:640px){.tb-long{display:none}.tb-short{display:inline}#yearWheel{order:-1}}
-.to-top{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:50;width:3rem;height:3rem;border-radius:50%;background:var(--brand-strong);color:var(--on-brand);display:grid;place-items:center;text-decoration:none;font-size:1.3rem;font-weight:800;box-shadow:var(--shadow-sm)}
-</style>
-
+<link rel="icon" href="img/hgv-icon.png">
+<link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-page="home">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
@@ -436,34 +19,20 @@ dialog::backdrop{background:var(--backdrop)}
   <symbol id="i-route" viewBox="0 0 24 24"><path d="M3 11 21 3l-8 18-2-8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
 </svg>
-
 <a class="skip" href="#main">Zum Inhalt springen</a>
-
 <div class="topbar">
 <div class="testband" role="note"><div class="wrap"><b>TESTSEITE</b><span class="tb-long">Entwurf für das HGV-Treffen. Noch nicht die offizielle Website des HGV Kleingartach.</span><span class="tb-short">Entwurf, noch nicht offiziell</span></div></div>
-
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="HGV Kleingartach, zum Seitenanfang"><img src="img/hgv-logo.png" alt="HGV Handels- und Gewerbeverein Kleingartach e. V." width="222" height="86"></a>
+    <a class="brand" href="index.html" aria-label="HGV Kleingartach, zur Startseite"><img src="img/hgv-logo.png" alt="HGV Handels- und Gewerbeverein Kleingartach e. V." width="222" height="86"></a>
     <button class="theme-btn" id="themeBtn" type="button" aria-label="Dunkles Design" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
     <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="nav">Menü</button>
-    <nav class="nav" id="nav" aria-label="Hauptnavigation">
-      <ul>
-        <li><a href="#termine">Termine</a></li>
-        <li><a href="#aktuelles">Aktuelles</a></li>
-        <li><a href="#mitglieder">Betriebe</a></li>
-        <li><a href="#verein">Über uns</a></li>
-        <li><a href="#frag">Frag den HGV</a></li>
-        <li><a href="#ideen">Ausblick</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
-        <li><a class="cta" href="#mitglied-werden">Mitglied werden</a></li>
-      </ul>
-    </nav>
+    <nav class="nav" id="nav" aria-label="Hauptnavigation"><ul><li><a href="termine.html">Termine</a></li><li><a href="aktuelles.html">Aktuelles</a></li><li><a href="betriebe.html">Betriebe</a></li><li><a href="verein.html">Verein</a></li><li><a href="frag.html">Frag den HGV</a></li><li><a href="ausblick.html">Ausblick</a></li><li><a href="kontakt.html">Kontakt</a></li><li><a class="cta" href="mitglied-werden.html">Mitglied werden</a></li></ul></nav>
   </div>
 </header>
 </div>
-
 <main id="main">
 <section class="hero" id="top" aria-labelledby="hero-h">
   <div class="wrap">
@@ -490,7 +59,7 @@ dialog::backdrop{background:var(--backdrop)}
     <div class="hero-media">
       <div class="hero-main"><img src="img/hero-baum.jpg" alt="Der beleuchtete Weihnachtsbaum und der geschmückte Brunnen am Kirchplatz Kleingartach in der Abenddämmerung" width="960" height="1280"></div>
       <div class="hero-second"><img src="img/ostern-brunnen.jpg" alt="Der Osterbrunnen am Kirchplatz, geschmückt von Helferinnen des HGV" width="1200" height="900"></div>
-      <a class="next" href="#termine" style="text-decoration:none;color:inherit">
+      <a class="next" href="termine.html" style="text-decoration:none;color:inherit">
         <small>Nächster Termin</small>
         <b>Lichterfest am 1. Advent</b>
         <span>Sonntag, 29. November 2026, 17 Uhr<br>Kirchplatz Kleingartach</span>
@@ -510,18 +79,14 @@ dialog::backdrop{background:var(--backdrop)}
 </section>
 
 <section class="logos" aria-label="Unsere Mitgliedsbetriebe">
-  <div class="wrap logos-head"><span class="kicker">Unsere Mitgliedsbetriebe</span><a href="#mitglieder">Alle 31 Betriebe ansehen</a></div>
+  <div class="wrap logos-head"><span class="kicker">Unsere Mitgliedsbetriebe</span><a href="betriebe.html">Alle 31 Betriebe ansehen</a></div>
   <div class="marquee"><div class="track" id="logoTrack"></div></div>
 </section>
 
-<section class="section" id="termine" aria-labelledby="termine-h">
-  <div class="wrap">
-    <div class="head"><div>
-      <span class="kicker">Termine</span>
-      <h2 id="termine-h">Das steht in Kleingartach an</h2>
-      <p>Die Traditionen des HGV im Jahreslauf. Termine mit „Vorschau“ sind aus den Vorjahren abgeleitet und werden vom Verein noch bestätigt.</p>
-    </div></div>
 
+<section class="section" aria-labelledby="next-h">
+  <div class="wrap">
+    <div class="head"><div><span class="kicker">Nächster Termin</span><h2 id="next-h">Bald ist Lichterfest</h2></div><a class="more-link" href="termine.html">Alle Termine</a></div>
     <article class="feature" aria-labelledby="ev-licht">
       <div class="feature-img"><img src="img/baum-detail.jpg" alt="Der Brunnen am Kirchplatz, als Adventskranz geschmückt und beleuchtet" width="720" height="960"></div>
       <div class="feature-body">
@@ -534,110 +99,25 @@ dialog::backdrop{background:var(--backdrop)}
         <div class="cd-label">Noch bis zum Lichterfest</div>
         <div class="countdown" id="countdown"><div><b id="cd-d">–</b><span>Tage</span></div><div><b id="cd-h">–</b><span>Std.</span></div><div><b id="cd-m">–</b><span>Min.</span></div><div><b id="cd-s">–</b><span>Sek.</span></div></div>
         <p style="color:var(--ink-soft)">Mit dem Lichterfest beginnt in Kleingartach die Adventszeit. 2025 gab es Glühwein, Punsch und Grillwurst unter dem Zelt, Würste von der Metzgerei Reinwald, Brötchen von der Bäckerei Keppler, Getränke von Getränke Hees und Glühwein von den Heuchelberger Weingärtnern.</p>
-        <div><a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=Kirchplatz,+75031+Eppingen-Kleingartach" target="_blank" rel="noopener">Route zum Kirchplatz</a></div>
+        <div class="btn-row"><a class="btn" href="kalender/lichterfest-2026.ics" download><svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg>In meinen Kalender</a><a class="btn outline" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Lichterfest%20am%201.%20Advent%20%28Vorschau%29&amp;dates=20261129T160000Z/20261129T180000Z&amp;location=Kirchplatz%2C%2075031%20Eppingen-Kleingartach&amp;details=Lichterfest%20des%20HGV%20Kleingartach%20am%20Weihnachtsbaum%20und%20Brunnen.%20Vorschau-Termin%2C%20wird%20vom%20HGV%20best%C3%A4tigt.%20https%3A//pb993.github.io/hgv-kleingartach-test/termine.html&amp;ctz=Europe/Berlin" target="_blank" rel="noopener">Google Kalender</a><a class="btn outline" href="https://www.google.com/maps/dir/?api=1&amp;destination=Kirchplatz,+75031+Eppingen-Kleingartach" target="_blank" rel="noopener">Route</a></div>
       </div>
     </article>
-
-    <ul class="events">
-      <li class="event"><div class="date"><b>Nov</b><span>2026</span></div><div><h3>Irish Folk Night</h3><p>Stadthalle Kleingartach, Güglinger Straße 24. Livemusik, seit 2013 jedes Jahr im Herbst.</p><span class="badge">Termin folgt</span></div></li>
-      <li class="event"><div class="date"><b>23.</b><span>Nov 2026</span></div><div><h3>Aufbau der Weihnachtsbeleuchtung</h3><p>Kirchplatz, in der Woche vor dem 1. Advent. Rund 5.000 Lichter kommen an den Baum.</p><span class="badge">Vorschau</span></div></li>
-      <li class="event"><div class="date"><b>Dez</b><span>2026</span></div><div><h3>Weihnachtsverlosung</h3><p>Bei den Mitgliedsbetrieben. Wer vor Ort einkauft, kann gewinnen.</p><span class="badge">Details folgen</span></div></li>
-      <li class="event"><div class="date"><b>März</b><span>2027</span></div><div><h3>Osterbrunnen</h3><p>Der Brunnen am Kirchplatz wird mit bunten Eiern und frischem Grün geschmückt.</p><span class="badge">Vorschau</span></div></li>
-      <li class="event"><div class="date"><b>2 J.</b><span>Rhythmus</span></div><div><h3>Weinstraßenfest mit Gewerbeschau</h3><p>Die Zabergäustraße wird zur Festmeile, die Betriebe zeigen, was sie können.</p><span class="badge">Nächster Termin folgt</span></div></li>
-      <li class="event"><div class="date"><b>2026</b><span>laufend</span></div><div><h3>Zu Gast bei</h3><p>Mitgliedsbetriebe öffnen ihre Türen für den Verein. Bisher bei Faber Service und FM Systeme.</p><span class="badge">Nächster Gastgeber folgt</span></div></li>
-    </ul>
-
-    <div class="year">
-      <div class="year-copy">
-        <span class="kicker">Das HGV-Jahr</span>
-        <h3>Zwölf Monate Kleingartach</h3>
-        <p>Tippen Sie auf einen Monat und sehen Sie, was der HGV dann im Ort bewegt.</p>
-        <div class="year-detail" id="yearDetail" aria-live="polite"></div>
-      </div>
-      <svg id="yearWheel" viewBox="0 0 400 400" role="group" aria-label="Jahresrad mit den Traditionen des HGV"></svg>
-    </div>
-
-    <div class="gallery-head"><h3 style="font-size:1.5rem;font-weight:800">Lichterfest 2025 in Bildern</h3></div>
-    <div class="gallery">
-      <figure><img src="img/aufbau.jpg" alt="Helfer im Hubsteiger hängen die Lichter an den Weihnachtsbaum" width="720" height="960" loading="lazy"><figcaption>Aufbau mit dem Hubsteiger von Faber Service</figcaption></figure>
-      <figure><img src="img/hero-baum.jpg" alt="Weihnachtsbaum und Brunnen am Kirchplatz in der Abenddämmerung" width="960" height="1280" loading="lazy"><figcaption>Rund 5.000 Lichter am Kirchplatz</figcaption></figure>
-      <figure><img src="img/grill.jpg" alt="Grillwurst auf dem Grill beim Lichterfest" width="720" height="1279" loading="lazy"><figcaption>Grillwurst von der Metzgerei Reinwald</figcaption></figure>
-      <figure><img src="img/tischdeko.jpg" alt="Tischlampe mit Tannenzweigen auf rotem Tischtuch" width="720" height="1280" loading="lazy"><figcaption>Festliche Tische unter dem Zelt</figcaption></figure>
-    </div>
   </div>
 </section>
 
-<section class="section soft" id="aktuelles" aria-labelledby="aktuelles-h">
+<section class="section soft" aria-labelledby="news-h">
   <div class="wrap">
-    <div class="head"><div>
-      <span class="kicker">Aktuelles</span>
-      <h2 id="aktuelles-h">Aus dem Vereinsleben</h2>
-    </div></div>
-    <div class="news">
-      <article class="post">
+    <div class="head"><div><span class="kicker">Aktuelles</span><h2 id="news-h">Aus dem Vereinsleben</h2></div><a class="more-link" href="aktuelles.html">Alle Beiträge</a></div>
+    <div class="news"><article class="post">
         <div class="post-img contain"><img src="img/jubilaeum.jpg" alt="Plakat: 25 Jahre HGV, Jubiläumsfest mit Gewerbeschau am 17. Mai 2026 auf dem Schillerplatz" width="1024" height="451" loading="lazy"></div>
-        <div class="post-body"><time datetime="2026-04-12">12. April 2026</time><h3>25 Jahre HGV: die Vorbereitungen laufen</h3><p>Jubiläumsfest mit Gewerbeschau am 17. Mai 2026 auf dem Schillerplatz. Viele Aussteller haben bereits zugesagt.</p><button class="more" type="button" data-article="art-jubilaeum">Weiterlesen</button></div>
-      </article>
-      <article class="post">
+        <div class="post-body"><time datetime="2026-04-12">12. April 2026</time><h3>25 Jahre HGV: die Vorbereitungen laufen</h3><p>Jubiläumsfest mit Gewerbeschau am 17. Mai 2026 auf dem Schillerplatz. Viele Aussteller haben bereits zugesagt.</p><a class="more" href="aktuelles.html#art-jubilaeum">Weiterlesen</a></div>
+      </article><article class="post">
         <div class="post-img"><img src="img/ostern-brunnen.jpg" alt="Der geschmückte Osterbrunnen am Kirchplatz" width="1200" height="900" loading="lazy"></div>
-        <div class="post-body"><time datetime="2026-03-24">24. März 2026</time><h3>Osterbrunnen am Kirchplatz</h3><p>Am 18. März haben Helferinnen des HGV den Dorfbrunnen mit bunten Eiern und frischem Grün geschmückt.</p><button class="more" type="button" data-article="art-ostern">Weiterlesen</button></div>
-      </article>
-      <article class="post">
+        <div class="post-body"><time datetime="2026-03-24">24. März 2026</time><h3>Osterbrunnen am Kirchplatz</h3><p>Am 18. März haben Helferinnen des HGV den Dorfbrunnen mit bunten Eiern und frischem Grün geschmückt.</p><a class="more" href="aktuelles.html#art-ostern">Weiterlesen</a></div>
+      </article><article class="post">
         <div class="post-img"><img src="img/baum-detail.jpg" alt="Beleuchteter Adventskranz am Brunnen" width="720" height="960" loading="lazy"></div>
-        <div class="post-body"><time datetime="2025-12-14">14. Dezember 2025</time><h3>Neue Lichter und ein stimmungsvolles Lichterfest</h3><p>Rund 5.000 Lichter am Baum, ein Adventskranz um den Brunnen und viele Gäste am 1. Advent.</p><button class="more" type="button" data-article="art-licht">Weiterlesen</button></div>
-      </article>
-      <article class="post">
-        <div class="post-img"><img src="img/lichterfest-plakat.jpg" alt="Einladungsplakat zum Lichterfest am 30. November 2025" width="760" height="1075" loading="lazy" style="object-position:50% 30%"></div>
-        <div class="post-body"><time datetime="2025-11-11">11. November 2025</time><h3>Einladung zum Lichterfest 2025</h3><p>Am 1. Advent von 17 bis 19 Uhr auf dem Kirchplatz, mit Glühwein, Punsch und Grillwurst.</p><button class="more" type="button" data-article="art-einladung">Weiterlesen</button></div>
-      </article>
-      <article class="post">
-        <div class="post-img"><img src="img/fm-systeme.jpg" alt="HGV-Mitglieder am Besprechungstisch bei der FM Systeme GmbH" width="1200" height="900" loading="lazy"></div>
-        <div class="post-body"><time datetime="2025-11-11">11. November 2025</time><h3>Zu Gast bei der FM Systeme GmbH</h3><p>Zweiter Abend der Reihe „Zu Gast bei“: 16 Mitglieder und Partner besuchten FM Systeme in Eppingen.</p><button class="more" type="button" data-article="art-fm">Weiterlesen</button></div>
-      </article>
-      <article class="post">
-        <div class="post-img"><img src="img/faber-besuch.jpg" alt="Werkstatt der Faber Service GmbH, vorbereitet für den Besuch des HGV" width="1200" height="900" loading="lazy"></div>
-        <div class="post-body"><time datetime="2025-11-11">11. November 2025</time><h3>Zu Gast bei der Faber Service GmbH</h3><p>Auftakt der neuen Besuchsreihe am 9. Juli 2025 mit Geschäftsführer Florian Faber.</p><button class="more" type="button" data-article="art-faber">Weiterlesen</button></div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<template id="art-jubilaeum"><img src="img/jubilaeum.jpg" alt="Plakat 25 Jahre HGV"><time>12. April 2026</time><h2>25 Jahre HGV: die Vorbereitungen laufen</h2><p>Der Handels- und Gewerbeverein Kleingartach e. V. feiert sein 25-jähriges Bestehen. Das Jubiläumsfest mit Gewerbeschau findet am 17. Mai 2026 ab 11 Uhr auf dem Schillerplatz in Kleingartach statt.</p><p>Die Mitglieder werben für das Fest, sprechen Aussteller an, kümmern sich um Anmeldungen und bringen Ideen ein. Viele Aussteller haben bereits zugesagt, die Gewerbeschau füllt sich.</p><p>Geplant sind Grußworte von MdB Alexander Throm, MdL Michael Preusch, Oberbürgermeister Klaus Holaschke und Ortsvorsteher Andreas Oechsner. Musik gibt es den ganzen Tag, Höhepunkt ist der Auftritt von Christian Engel. Für Kinder gibt es Töpfern, einen Kettcar-Parcours und Kistenstapeln, die Feuerwehr zeigt Vorführungen.</p><p>Aus einem Hubsteiger sehen Sie Kleingartach aus rund 25 Metern Höhe. Dazu gibt es regionales Essen und Trinken. Das Fest ist ein gemeinsames Projekt vieler Beteiligter.</p></template>
-<template id="art-ostern"><img src="img/ostern-brunnen.jpg" alt="Osterbrunnen am Kirchplatz"><time>24. März 2026</time><h2>Osterbrunnen am Kirchplatz</h2><p>Am 18. März haben Helferinnen und Helfer des HGV Kleingartach den Brunnen am Kirchplatz für Ostern geschmückt: mit bunten Ostereiern, frischem Grün und österlichen Elementen.</p><p>Der Brunnen steht für den Frühling und für das Engagement im Ort. Der HGV dankt den „Deko-Queens“ Aferdita Bytyci und Manuela Sauer für ihre Kreativität und ihren Einsatz.</p><p>Die Tradition verschönert Kleingartach jedes Jahr aufs Neue. Der Verein wünscht allen frohe Ostern.</p></template>
-<template id="art-licht"><img src="img/aufbau.jpg" alt="Aufbau der Weihnachtsbeleuchtung mit dem Hubsteiger" style="object-position:50% 30%"><time>14. Dezember 2025</time><h2>Neue Weihnachtsbeleuchtung und ein stimmungsvolles Lichterfest</h2><p>In der Woche vor dem 1. Advent hat der HGV die Weihnachtsbeleuchtung am Kirchplatz aufgebaut. Am 26. November kamen rund 5.000 Lichter an den Baum. Er stammt aus dem Garten von Norbert Rembold, der Bauhof hat ihn gefällt und aufgestellt. Florian Faber und das Team der Faber Service GmbH &amp; Co. KG halfen mit dem Hubsteiger.</p><p>Um den Brunnen wurde aus Zweigen ein Adventskranz gebunden und mit Kugeln und Zapfen in Gold und Rot geschmückt. Die Dekoration übernahmen Manuela Sauer und Aferdita Bytyci mit Unterstützung von Monika Faber.</p><p>Am 30. November, dem 1. Advent, wurde die neue Beleuchtung beim Lichterfest unter dem Zelt eingeweiht. Trotz drohendem Regen kamen viele Gäste. Die Würste lieferte die Metzgerei Reinwald, die Brötchen die Bäckerei Keppler, die Getränke Getränke Hees und den Glühwein die Heuchelberger Weingärtner.</p><p>Der HGV dankt allen Helfern und Gästen und wünscht eine friedliche Adventszeit.</p></template>
-<template id="art-einladung"><img src="img/lichterfest-plakat.jpg" alt="Einladungsplakat Lichterfest 2025" style="object-position:50% 25%"><time>11. November 2025</time><h2>Einladung zum Lichterfest 2025 am 1. Advent</h2><p>Der HGV Kleingartach lädt alle Bewohnerinnen und Bewohner zum Lichterfest ein: am Sonntag, 30. November 2025, von 17 bis 19 Uhr auf dem Kirchplatz Kleingartach.</p><p>Im Schein der neuen Beleuchtung an Weihnachtsbaum und Brunnen gibt es Glühwein, Punsch und Grillwurst. Gemeinsam wird der Beginn der Adventszeit eingeläutet.</p></template>
-<template id="art-fm"><img src="img/fm-systeme.jpg" alt="HGV bei FM Systeme"><time>11. November 2025</time><h2>Zu Gast bei der FM Systeme GmbH</h2><p>Am Mittwoch, 5. November 2025, fand der zweite Abend der neuen Reihe „Zu Gast bei“ statt. 16 Teilnehmerinnen und Teilnehmer, darunter Partner von Mitgliedern, besuchten die FM Systeme GmbH in Eppingen.</p><p>Katrin Schmalzhofer-Rathke begrüßte die Gruppe gegen 18:30 Uhr. Firmengründer Rainer Schmalzhofer erzählte die Geschichte des Familienbetriebs von den Anfängen im Privathaus bis heute.</p><p>Im Showroom zeigte das Unternehmen Profiltechnik, Arbeitsplatzsysteme und individuelle Lean-Lösungen. Danach ging es durch die Produktionshalle, eine Bilderchronik zeigte die Entwicklung über die Jahre. Der Abend klang bei Snacks und Getränken aus.</p></template>
-<template id="art-faber"><img src="img/faber-besuch.jpg" alt="Werkstatt der Faber Service GmbH"><time>11. November 2025</time><h2>Zu Gast bei der Faber Service GmbH</h2><p>Am Mittwoch, 9. Juli 2025, startete die neue Besuchsreihe „Zu Gast bei“. Die Faber Service GmbH &amp; Co. KG öffnete ihre Türen für Mitglieder des HGV und ihre Gäste.</p><p>Geschäftsführer Florian Faber stellte das Leistungsspektrum vor: Photovoltaikanlagen für Privat und Gewerbe, automatisierte Hochregallager, Fördertechnik, Industrieanlagen sowie Wartung und technischen Service.</p><p>Die Reihe soll den Zusammenhalt im Verein stärken und den Austausch zwischen den Mitgliedsbetrieben fördern. Der gut besuchte Abend war ein gelungener Auftakt.</p></template>
-
-<section class="section" id="mitglieder" aria-labelledby="mitglieder-h">
-  <div class="wrap">
-    <div class="head"><div>
-      <span class="kicker">Betriebe</span>
-      <h2 id="mitglieder-h">31 Betriebe, ein Verein</h2>
-      <p>Suchen Sie nach Name, Branche oder Straße. Telefonnummern und E-Mail-Adressen kopieren Sie mit einem Tipp.</p>
-    </div></div>
-    <div class="toolbar">
-      <div class="search">
-        <svg aria-hidden="true"><use href="#i-search"/></svg>
-        <label class="sr-only" for="q">Betriebe durchsuchen</label>
-        <input id="q" type="search" placeholder="Name, Branche oder Straße" autocomplete="off">
-        <button class="clear" id="clear" type="button" hidden>Zurücksetzen</button>
-      </div>
-      <div class="chips" role="group" aria-label="Nach Branche filtern">
-        <button class="chip" type="button" data-cat="" aria-pressed="true">Alle</button>
-        <button class="chip" type="button" data-cat="Handwerk" aria-pressed="false">Handwerk</button>
-        <button class="chip" type="button" data-cat="Handel" aria-pressed="false">Handel</button>
-        <button class="chip" type="button" data-cat="Lebensmittel &amp; Getränke" aria-pressed="false">Lebensmittel &amp; Getränke</button>
-        <button class="chip" type="button" data-cat="Gastronomie" aria-pressed="false">Gastronomie</button>
-        <button class="chip" type="button" data-cat="Dienstleister" aria-pressed="false">Dienstleister</button>
-        <button class="chip" type="button" data-cat="Industrie" aria-pressed="false">Industrie</button>
-        <button class="chip" type="button" data-cat="Gesundheit" aria-pressed="false">Gesundheit</button>
-        <button class="chip" type="button" data-cat="Banken &amp; Finanzen" aria-pressed="false">Banken &amp; Finanzen</button>
-      </div>
-      <p class="count" id="count" aria-live="polite">31 Betriebe</p>
-    </div>
-    <ul class="members" id="members"></ul>
-    <p class="empty" id="empty" hidden>Kein Betrieb passt zu Ihrer Suche. Versuchen Sie einen anderen Begriff oder wählen Sie „Alle“.</p>
+        <div class="post-body"><time datetime="2025-12-14">14. Dezember 2025</time><h3>Neue Lichter und ein stimmungsvolles Lichterfest</h3><p>Rund 5.000 Lichter am Baum, ein Adventskranz um den Brunnen und viele Gäste am 1. Advent.</p><a class="more" href="aktuelles.html#art-licht">Weiterlesen</a></div>
+      </article></div>
   </div>
 </section>
 
@@ -646,66 +126,26 @@ dialog::backdrop{background:var(--backdrop)}
     <div class="ask-copy">
       <span class="kicker on-dark">Vorschau · KI-Assistent</span>
       <h2 id="ask-h">Fragen Sie den HGV.</h2>
-      <p>Später beantwortet ein KI-Assistent Fragen zu Betrieben, Terminen und Mitgliedschaft, rund um die Uhr. Diese Vorschau durchsucht schon jetzt die Inhalte dieser Seite.</p>
+      <p>Probieren Sie den HGV-Assistenten aus. Er kennt die Betriebe, Termine und den Verein und antwortet mit einem Augenzwinkern. Für alles andere hat ihn sein Schöpfer in einen Käfig gesperrt.</p>
       <ul class="ask-points">
-        <li>Antwortet nur aus Inhalten des HGV und der Betriebe</li>
-        <li>Klar als KI gekennzeichnet</li>
-        <li>Verweist direkt an den passenden Betrieb</li>
+        <li>KI-Vorschau für die Testphase</li>
+        <li>Beantwortet nur Fragen rund um diese Webseite</li>
+        <li>Bitte keine persönlichen Daten eingeben</li>
       </ul>
     </div>
     <div class="chat">
-      <div class="chat-head"><img src="img/hgv-icon.png" alt="" width="36" height="36"><div><b>HGV-Assistent</b><span>Vorschau, durchsucht diese Seite</span></div><span class="live">Demo</span></div>
-      <div class="chat-log" id="chatLog" aria-live="polite"><div class="msg bot">Hallo! Ich bin die Vorschau des HGV-Assistenten. Fragen Sie mich nach Betrieben, Terminen oder der Mitgliedschaft.</div></div>
-      <div class="ask-chips"><button type="button">Wer macht Heizung?</button><button type="button">Wann ist das Lichterfest?</button><button type="button">Wo gibt es einen Geldautomaten?</button><button type="button">Wie werde ich Mitglied?</button></div>
-      <form class="ask-form" id="askForm"><label class="sr-only" for="askInput">Ihre Frage an den HGV</label><input id="askInput" type="text" placeholder="Ihre Frage an den HGV" autocomplete="off"><button class="btn sun small" type="submit">Fragen</button></form>
+      <div class="chat-head"><img src="img/hgv-icon.png" alt="" width="36" height="36"><div><b>HGV-Assistent</b><span>KI-Vorschau der Testseite</span></div><span class="live">Demo</span></div>
+      <div class="chat-log" id="chatLog" aria-live="polite"><div class="msg bot">Hallo! Ich bin der HGV-Assistent. Fragen Sie mich nach Betrieben, Terminen oder dem Verein. Tipp: Die erste Frage unten ist schon eingetippt, einfach auf „Fragen“ tippen.</div></div>
+      <div class="ask-chips"><button type="button" class="hot">Wer ist die beste Firma der Welt?</button><button type="button">Wann ist das Lichterfest?</button><button type="button">Wer macht Heizung?</button><button type="button">Wie werde ich Mitglied?</button></div>
+      <form class="ask-form" id="askForm"><label class="sr-only" for="askInput">Ihre Frage an den HGV</label><input id="askInput" type="text" placeholder="Ihre Frage an den HGV" value="Wer ist die beste Firma der Welt?" maxlength="400" autocomplete="off"><button class="btn sun small" type="submit">Fragen</button></form>
     </div>
   </div>
 </section>
 
-<section class="section soft" id="verein" aria-labelledby="verein-h">
+
+<section class="section" aria-labelledby="idea-h">
   <div class="wrap">
-    <div class="about">
-      <div class="about-copy">
-        <span class="kicker">Über uns</span>
-        <h2 id="verein-h">Damit es in Kleingartach weiter Bäcker, Metzger und Handwerker gibt</h2>
-        <p>Der Handels- und Gewerbeverein Kleingartach e. V. wurde am 7. November 2001 aus einer Interessengemeinschaft gegründet. 20 Betriebe machten den Anfang, heute sind es 31.</p>
-        <p>Der Verein wirkt dem Rückgang der Gewerbebetriebe im ländlichen Raum entgegen: mit Kommunikation, gemeinsamen Veranstaltungen und besonderen Aktionen. Schon 2003 stellte der HGV einen Infopoint mit Ortsplan der Mitgliedsbetriebe in den Ortskern und brachte die erste Weihnachtsbeleuchtung in die Zabergäustraße.</p>
-        <div class="board"><span class="mono" aria-hidden="true">DK</span><div><b>Dieter Keppler</b><span>Vorstand des HGV Kleingartach e. V.</span></div></div>
-      </div>
-      <figure>
-        <img src="img/fm-systeme.jpg" alt="Mitglieder des HGV beim Abend „Zu Gast bei“ der FM Systeme GmbH" width="1200" height="900" loading="lazy">
-        <figcaption>„Zu Gast bei“ der FM Systeme GmbH, November 2025</figcaption>
-      </figure>
-    </div>
-
-    <ul class="doing">
-      <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/><circle cx="12" cy="12" r="4"/></svg><b>Weihnachtsbeleuchtung</b><p>Seit 2003 in der Zabergäustraße, seit 2013 mit LED-Sternen, heute mit 5.000 Lichtern am Kirchplatz.</p></li>
-      <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3 5 14h14L12 3zM12 14v7M8 21h8"/></svg><b>Lichterfest und Osterbrunnen</b><p>Am 1. Advent und im Frühjahr wird der Kirchplatz zum Treffpunkt für den ganzen Ort.</p></li>
-      <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 21V10l9-6 9 6v11M9 21v-6h6v6"/></svg><b>Weinstraßenfest mit Gewerbeschau</b><p>Alle zwei Jahre wird die Zabergäustraße zur Festmeile der Kleingartacher Betriebe.</p></li>
-      <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg><b>Irish Folk Night</b><p>Seit 2013 Livemusik in der Stadthalle Kleingartach, dazu Kabarett wie 2019 mit Klaus Birk.</p></li>
-      <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 12h6M9 16h6"/></svg><b>Zu Gast bei</b><p>Seit 2025 öffnen Mitgliedsbetriebe ihre Türen für den Verein.</p></li>
-      <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M8 3v5M16 3v5"/></svg><b>Ausflüge und Stammtische</b><p>Mitgliederausflüge mit Stadtbahn, Stadionbesuch oder Weinprobe, dazu Themenstammtische.</p></li>
-    </ul>
-
-    <h3 style="font-size:1.5rem;font-weight:800;margin-top:4rem">25 Jahre in Stationen</h3>
-    <ol class="timeline">
-      <li><b>2001</b><p>Gründung am 7. November mit 20 Betrieben.</p></li>
-      <li><b>2003</b><p>Infopoint mit Ortsplan und erste Weihnachtsbeleuchtung in der Zabergäustraße.</p></li>
-      <li><b>2013</b><p>LED-Sterne, erstes Lichterfest am Kirchplatz, erste Irish Folk Night.</p></li>
-      <li><b>2019</b><p>21. Weinstraßenfest mit Gewerbeschau, Kabarett mit Klaus Birk.</p></li>
-      <li><b>2025</b><p>Start von „Zu Gast bei“, neue Beleuchtung mit 5.000 Lichtern.</p></li>
-      <li><b>2026</b><p>25 Jahre HGV, Jubiläumsfest am 17. Mai auf dem Schillerplatz.</p></li>
-    </ol>
-  </div>
-</section>
-
-<section class="section" id="ideen" aria-labelledby="ideen-h">
-  <div class="wrap">
-    <div class="head"><div>
-      <span class="kicker">Ausblick</span>
-      <h2 id="ideen-h">Was alles noch kommen kann</h2>
-      <p>Die neue Seite ist erst der Anfang. Diese Ideen lassen sich Schritt für Schritt ergänzen, viele davon zusammen mit der Plattform für die Websites der Mitgliedsbetriebe.</p>
-    </div></div>
+    <div class="head"><div><span class="kicker">Ausblick</span><h2 id="idea-h">Ideen für Kleingartach</h2><p>Gutschein, Jobbörse, digitales Bonusheft und mehr: was die neue Seite noch alles kann.</p></div><a class="more-link" href="ausblick.html">Alle 16 Ideen</a></div>
     <div class="voucher">
       <div class="voucher-card" aria-hidden="true">
         <div class="vc-top"><img src="img/hgv-icon.png" alt="" width="44" height="44"><span>Gutschein</span></div>
@@ -724,316 +164,25 @@ dialog::backdrop{background:var(--backdrop)}
         </ul>
       </div>
     </div>
-    <div class="idea-groups">
-      <div class="idea-group"><h3>Für Bürgerinnen und Bürger</h3><ul class="ideas"><li class="idea"><span class="ph p1">Phase 1</span><b>Jetzt geöffnet</b><p>Jeder Betrieb pflegt seine Öffnungszeiten, die Seite zeigt live, wer gerade offen hat.</p></li><li class="idea"><span class="ph p1">Phase 1</span><b>Termine in den Handy-Kalender</b><p>Ein Tipp, und Lichterfest oder Irish Folk Night stehen im eigenen Kalender, mit Erinnerung.</p></li><li class="idea"><span class="ph p2">Phase 2</span><b>Ortsplan der Betriebe</b><p>Eine Karte mit allen Mitgliedsbetrieben, wie der Infopoint von 2003, nur digital und mit Route.</p></li><li class="idea"><span class="ph p2">Phase 2</span><b>HGV-Neuigkeiten aufs Handy</b><p>Ein Newsletter oder WhatsApp-Kanal für Termine, Aktionen und die Weihnachtsverlosung.</p></li><li class="idea"><span class="ph p3">Phase 3</span><b>Digitales Bonusheft</b><p>Stempel per QR-Code an der Kasse sammeln statt im Papierheft, einlösbar in allen Betrieben.</p></li><li class="idea"><span class="ph p3">Phase 3</span><b>Frag den HGV</b><p>Der KI-Assistent von oben, echt angebunden, mit Öffnungszeiten, Angeboten und Terminen.</p></li></ul></div>
-      <div class="idea-group"><h3>Für die Betriebe</h3><ul class="ideas"><li class="idea"><span class="ph p1">Phase 1</span><b>Eigene Website für jeden Betrieb</b><p>Jeder Betrieb bekommt eine eigene Seite auf der gemeinsamen Plattform, selbst pflegbar, mit KI-Hilfe.</p></li><li class="idea"><span class="ph p2">Phase 2</span><b>Stellen und Ausbildung</b><p>Eine gemeinsame Jobbörse aller Betriebe. Ausbildungsplätze in Kleingartach auf einen Blick.</p></li><li class="idea"><span class="ph p2">Phase 2</span><b>Aktionen und Angebote</b><p>Betriebe stellen Angebote ein, die auch auf der HGV-Startseite erscheinen.</p></li><li class="idea"><span class="ph p3">Phase 3</span><b>Online-Terminbuchung</b><p>Friseur, Wellness und Gesundheitszentrum vergeben Termine direkt online.</p></li><li class="idea"><span class="ph p3">Phase 3</span><b>Gewerbeschau online</b><p>Die Gewerbeschau vom Weinstraßenfest als digitaler Rundgang, das ganze Jahr.</p></li></ul></div>
-      <div class="idea-group"><h3>Für den Verein</h3><ul class="ideas"><li class="idea"><span class="ph p2">Phase 2</span><b>Mitgliederbereich</b><p>Einladungen, Protokolle und Abstimmungen an einem Ort, mit eigenem Login für Mitglieder.</p></li><li class="idea"><span class="ph p2">Phase 2</span><b>Helferliste für Feste</b><p>Wer hilft beim Aufbau der Beleuchtung? Schichten fürs Lichterfest online eintragen.</p></li><li class="idea"><span class="ph p3">Phase 3</span><b>Lichterpatenschaft</b><p>Bürger und Firmen übernehmen die Patenschaft für einen Stern der Weihnachtsbeleuchtung.</p></li><li class="idea"><span class="ph p3">Phase 3</span><b>Fotos zum Mitmachen</b><p>Besucher laden ihre Fotos vom Lichterfest hoch, der HGV gibt sie für die Galerie frei.</p></li><li class="idea"><span class="ph p3">Phase 3</span><b>Chronik zum Jubiläum</b><p>25 Jahre HGV als digitale Zeitreise mit Fotos und Erinnerungen der Mitglieder.</p></li></ul></div>
-    </div>
-    <p class="legend">Phase 1: mit dem Start der neuen Seite. Phase 2: im ersten Jahr. Phase 3: danach, je nach Interesse im Verein.</p>
   </div>
 </section>
 
-<section class="join" id="mitglied-werden" aria-labelledby="mw-h">
+<section class="cta-band" aria-labelledby="cta-h">
   <div class="wrap">
-    <div>
-      <h2 id="mw-h">Ihr Betrieb gehört nach Kleingartach. Und in den HGV.</h2>
-      <p class="intro">Ob Handwerk, Handel, Gastronomie oder Dienstleistung: Im HGV sind Sie Teil eines Netzwerks, das den Ort sichtbar macht.</p>
-      <ul class="benefits">
-        <li><span class="dot"><svg aria-hidden="true"><use href="#i-check"/></svg></span><div><b>Sichtbar im Verzeichnis</b><p>Ihr Betrieb mit Logo, Telefon, Adresse, Website und Route auf dieser Seite.</p></div></li>
-        <li><span class="dot"><svg aria-hidden="true"><use href="#i-check"/></svg></span><div><b>Gemeinsame Aktionen</b><p>Gewerbeschau, Bonusheft und Weihnachtsverlosung bringen Aufmerksamkeit, die ein Betrieb allein nicht bekommt.</p></div></li>
-        <li><span class="dot"><svg aria-hidden="true"><use href="#i-check"/></svg></span><div><b>Kontakte im Ort</b><p>Stammtische, Ausflüge und „Zu Gast bei“ bringen Sie mit Betrieben aus der Nachbarschaft zusammen.</p></div></li>
-        <li><span class="dot"><svg aria-hidden="true"><use href="#i-check"/></svg></span><div><b>Etwas für Kleingartach tun</b><p>Beleuchtung, Lichterfest und Osterbrunnen gibt es, weil Betriebe aus dem Ort sie tragen.</p></div></li>
-      </ul>
-      <div class="steps"><b>So werden Sie Mitglied</b>Beitrittserklärung anfordern, ausfüllen und per Post an HGV Kleingartach e. V., Sonnengasse 1, 75031 Eppingen-Kleingartach senden oder per E-Mail an info@hgv-kleingartach.de. Alle Details, auch zum Beitrag, stehen in der Beitrittserklärung.</div>
-    </div>
-    <form class="form" id="form" novalidate>
-      <h3>Beitrittserklärung anfordern</h3>
-      <p>Wir melden uns mit allen Unterlagen bei Ihnen.</p>
-      <label for="f-betrieb">Betrieb<input id="f-betrieb" name="betrieb" type="text" autocomplete="organization" required></label>
-      <label for="f-name">Ansprechpartner<input id="f-name" name="name" type="text" autocomplete="name"></label>
-      <div class="grid2">
-        <label for="f-mail">E-Mail<input id="f-mail" name="email" type="email" autocomplete="email" required></label>
-        <label for="f-tel">Telefon<input id="f-tel" name="tel" type="tel" autocomplete="tel"></label>
-      </div>
-      <label for="f-msg">Nachricht<textarea id="f-msg" name="msg"></textarea></label>
-      <button class="btn sun" type="submit">Anfrage absenden</button>
-      <p class="notice" id="formNotice" role="status" hidden></p>
-      <p class="fine">Testseite: Das Formular versendet noch nichts.</p>
-    </form>
-  </div>
-</section>
-
-<section class="section" id="kontakt" aria-labelledby="kontakt-h">
-  <div class="wrap">
-    <div class="head"><div><span class="kicker">Kontakt</span><h2 id="kontakt-h">So erreichen Sie den HGV</h2></div></div>
-    <div class="contact">
-      <div class="c-card"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><h3>Anschrift</h3><p>Handels- und Gewerbeverein Kleingartach e. V.<br>Sonnengasse 1<br>75031 Eppingen-Kleingartach</p><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Sonnengasse+1,+75031+Eppingen" target="_blank" rel="noopener">Route planen</a></div>
-      <div class="c-card"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><h3>Telefon</h3><div class="m-line"><span class="val">07138 6618</span><button class="copy" type="button" data-copy="07138 6618">Kopieren</button></div><p>Vorstand: Dieter Keppler</p></div>
-      <div class="c-card"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg><h3>E-Mail</h3><div class="m-line"><span class="val">info@hgv-kleingartach.de</span><button class="copy" type="button" data-copy="info@hgv-kleingartach.de">Kopieren</button></div><p>Für Ideen, Anfragen und alle, die beim nächsten Fest helfen möchten.</p></div>
-    </div>
+    <div><h2 id="cta-h">Ihr Betrieb gehört nach Kleingartach. Und in den HGV.</h2><p>Sichtbar im Verzeichnis, Teil der gemeinsamen Aktionen, mit eigener Website auf der neuen Plattform.</p></div>
+    <a class="btn sun" href="mitglied-werden.html">Mitglied werden</a>
   </div>
 </section>
 </main>
-
-<a class="to-top" id="toTop" href="#top" hidden aria-label="Nach oben">↑</a>
-
+<a class="to-top" id="toTop" href="#" hidden aria-label="Nach oben">↑</a>
 <footer class="site-footer">
   <div class="wrap">
-    <div class="f-brand"><img src="img/hgv-icon.png" alt="" width="44" height="44"><div><b>HGV Kleingartach e. V.</b><br>Gemeinsam für Kleingartach seit 2001</div></div>
-    <ul><li><a href="#termine">Termine</a></li><li><a href="#mitglieder">Betriebe</a></li><li><a href="#mitglied-werden">Mitglied werden</a></li></ul>
-    <ul><li><button type="button" data-dialog="impressum">Impressum</button></li><li><button type="button" data-dialog="datenschutz">Datenschutz</button></li><li>Testseite, Entwurf vom 21.10.2026</li></ul>
+    <div class="f-brand"><img src="img/hgv-icon.png" alt="" width="44" height="44"><div><b>HGV Kleingartach e. V.</b><br>Gemeinsam für Kleingartach seit 2001<br>Sonnengasse 1, 75031 Eppingen-Kleingartach</div></div>
+    <ul><li><a href="termine.html">Termine</a></li><li><a href="aktuelles.html">Aktuelles</a></li><li><a href="betriebe.html">Betriebe</a></li><li><a href="verein.html">Verein</a></li></ul>
+    <ul><li><a href="frag.html">Frag den HGV</a></li><li><a href="ausblick.html">Ausblick</a></li><li><a href="mitglied-werden.html">Mitglied werden</a></li><li><a href="kontakt.html">Kontakt</a></li></ul>
+    <ul><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li>Testseite, Entwurf vom 22.10.2026</li></ul>
   </div>
 </footer>
-
-<dialog id="article" aria-label="Beitrag"><div class="d-inner"><button class="btn outline small d-close" type="button" data-close>Schließen</button><div id="articleBody" style="display:grid;gap:1rem"></div></div></dialog>
-
-<dialog id="impressum" aria-labelledby="imp-h"><div class="d-inner">
-  <button class="btn outline small d-close" type="button" data-close>Schließen</button>
-  <h2 id="imp-h">Impressum</h2>
-  <p><b>Handels- und Gewerbeverein Kleingartach e. V.</b><br>Sonnengasse 1<br>75031 Eppingen-Kleingartach</p>
-  <p>Vertreten durch den Vorstand: Dieter Keppler</p>
-  <p>Telefon: 07138 6618<br>E-Mail: info@hgv-kleingartach.de</p>
-  <p>Eingetragen im Vereinsregister beim Registergericht Heilbronn, Registernummer VR 2838.<br>Umsatzsteuer-ID gemäß § 27a UStG: 65208/14639</p>
-  <h3>Hinweis zur Testseite</h3>
-  <p>Diese Seite ist ein Entwurf vom 21. Oktober 2026 zur Abstimmung im Verein und ersetzt nicht die offizielle Website unter hgv-kleingartach.de. Texte, Fotos und Logos stammen von der bisherigen Website und werden vor einer Veröffentlichung geprüft.</p>
-</div></dialog>
-
-<dialog id="datenschutz" aria-labelledby="ds-h"><div class="d-inner">
-  <button class="btn outline small d-close" type="button" data-close>Schließen</button>
-  <h2 id="ds-h">Datenschutz</h2>
-  <p>Diese Testseite setzt keine Cookies, nutzt keine Analyse- oder Tracking-Dienste und speichert keine Eingaben. Das Formular versendet keine Daten.</p>
-  <h3>Schriftarten</h3>
-  <p>Die Seite lädt die Schrift von Google Fonts. Dabei wird Ihre IP-Adresse an Google übertragen. Auf der endgültigen Website wird die Schrift lokal eingebunden.</p>
-  <h3>Externe Links</h3>
-  <p>Links zu den Websites der Betriebe und zu Google Maps öffnen in einem neuen Fenster. Dort gelten die Datenschutzhinweise des jeweiligen Anbieters.</p>
-</div></dialog>
-
-<script>
-(function(){
-  var M=[
-    {n:"Bäckerei Konditorei Keppler GmbH",c:["Gastronomie","Lebensmittel & Getränke"],a:"Sonnengasse 1, 75031 Eppingen",t:"07138 6618",e:"info@baeckerei-keppler.de",w:"baeckerei-keppler.de",l:"keppler",k:"Bäcker Brot Kuchen Café Sonnencafé"},
-    {n:"Buchhandlung Taube & Friend",c:["Handel"],a:"Maulbronner Straße 1, 74363 Güglingen",e:"friend@buchhandlung-taube.de",w:"buchhandlung-taube.de",l:"taube",d:1,k:"Bücher Buchhandlung"},
-    {n:"CERA GmbH",c:["Industrie"],a:"Rieslingstraße 19, 75031 Eppingen",t:"07138 811413",l:"cera"},
-    {n:"Chillax Wellnessmassagen",c:["Gesundheit"],a:"Gassenäcker 7, 75031 Eppingen",t:"01525 3310948",w:"yvonne-flor.de",l:"chillax",k:"Massage Wellness"},
-    {n:"Creative Gartengestaltung Joachim Heckmann",c:["Dienstleister"],a:"Maulbronner Straße 7/1, 75031 Eppingen",t:"07138 8106816",e:"info@gartencreativ.de",w:"gartencreativ.de",l:"heckmann",k:"Garten Gartenbau"},
-    {n:"Elektro Feeser",c:["Handwerk"],a:"Leintalstraße 22, 75031 Eppingen",t:"07138 932031",e:"MFeeser@gmx.de",w:"elektrofeeser.de",l:"feeser",k:"Elektriker Elektro Photovoltaik"},
-    {n:"Faber Service GmbH & Co. KG",c:["Dienstleister","Industrie"],a:"Eichbühlhof 1, 75031 Eppingen",t:"07138 932030",e:"online@faber-industrieservice.de",w:"faber-industrieservice.de",l:"faber",k:"Faber Industrieservice Montage Wartung Service Photovoltaik PV"},
-    {n:"Faber-Energie GbR",c:["Handwerk"],a:"Eichbühlhof 1, 75031 Eppingen",t:"01511 5715993",w:"faber-energie.de",l:"faber-energie",k:"Energie Solar"},
-    {n:"Fliesenlegerbetrieb Müller",c:["Handwerk"],a:"Rückerstraße 5, 75031 Eppingen",e:"mueller-matthias@gmx.de",k:"Fliesen Fliesenleger"},
-    {n:"FM Systeme GmbH",c:["Industrie"],a:"Jakob-Dieffenbacher-Straße 1, 75031 Eppingen",w:"fm-systeme.de",l:"fm",k:"Fertigung Lean Profiltechnik Arbeitsplatzsysteme"},
-    {n:"Friseur Kleingartach",c:["Handwerk"],a:"Güglinger Straße 1, 75031 Eppingen",t:"07138 8133744",l:"friseur-kg",k:"Friseur Haare"},
-    {n:"Friseur Wenke Weißert",c:["Handwerk"],a:"Im Eichbühl 9, 75031 Eppingen",t:"07138 811031",l:"weissert",k:"Friseur Haare"},
-    {n:"Gesundheitszentrum Kleingartach",c:["Gesundheit"],a:"Heuchelbergstraße 19, 75031 Eppingen",t:"07138 813492",e:"info@gesundheitszentrum-kleingartach.de",w:"gesundheitszentrum-kleingartach.de",l:"gz",k:"Physiotherapie Podologie"},
-    {n:"Getränke Hees",c:["Lebensmittel & Getränke"],a:"Mittlere Gasse 3, 75031 Eppingen",t:"07138 6492",l:"hees",k:"Getränke"},
-    {n:"Grandi Joos Holzbau",c:["Handwerk"],a:"Im Gemminger Feld 30, 75031 Eppingen",t:"07138 813377",e:"info@grandi-joos.de",w:"grandi-joos.de",l:"joos",k:"Holzbau Zimmerei Dach"},
-    {n:"GRUMA OHG",c:["Industrie"],a:"Im Gemminger Feld 9, 75031 Eppingen",t:"07138 92000",e:"info@gruma-heizung.de",w:"gruma-heizung.de",l:"gruma",k:"Heizung Heiztechnik Energie"},
-    {n:"Heuchelberg Weingärtner eG",c:["Handel","Lebensmittel & Getränke"],a:"Neipperger Straße 25, 74193 Schwaigern",t:"07138 9702-0",e:"info@heuchelberg.de",w:"heuchelberg.de",l:"heuchelberg",k:"Wein Weingärtner"},
-    {n:"Jeder Heizung und Solartechnik",c:["Handwerk"],a:"Bannholzstraße 24, 75031 Eppingen",t:"07138 932638",l:"jeder",k:"Heizung Solar"},
-    {n:"Kreissparkasse Heilbronn",c:["Banken & Finanzen"],a:"Güglinger Straße 1, 75031 Eppingen",t:"0800 1620500",e:"info@ksk-hn.de",w:"sparkasse-heilbronn.de",l:"ksk",k:"Bank Sparkasse"},
-    {n:"Kurier-Imbiss-Flohmärkte Bach GbR",c:["Dienstleister"],a:"Herdweg 9, 75031 Eppingen",t:"07138 932601",l:"bach",k:"Kurier Imbiss Flohmarkt"},
-    {n:"Lohnsteuerhilfeverein Unterland-Hall e. V.",c:["Banken & Finanzen"],a:"Im Schelmengrund 21, 75031 Eppingen",t:"07138 932583",e:"lohnsteuerhilfe-eppingen@web.de",l:"lohnsteuer",k:"Steuer Lohnsteuer"},
-    {n:"Metzgerei Reinwald GmbH",c:["Lebensmittel & Getränke"],a:"Zabergäustraße 11, 75031 Eppingen",t:"07138 8109678",e:"info@reinwald-gmbh.de",w:"reinwald-gmbh.de",l:"reinwald",k:"Metzger Wurst Fleisch"},
-    {n:"Pet Fu",c:["Handel"],a:"Leintalstraße 22, 75031 Eppingen",l:"petfu",x:"Hundeshop. Geöffnet Montag und Donnerstag 16 bis 18 Uhr sowie samstags.",k:"Hund Tierfutter"},
-    {n:"Rentschler-Air Klima Systeme",c:["Industrie"],a:"Trollingerweg 9, 75031 Eppingen",t:"07138 6903572",e:"info@rentschler-air.de",w:"rentschler-air.de",l:"rentschler",k:"Klima Klimaanlage"},
-    {n:"Rund um's Holz Roland Köhler",c:["Handwerk"],a:"Blumenstraße 14, 69235 Dielheim",t:"0176 18133783",e:"info@rund-ums-holz.info",w:"rund-ums-holz.info",l:"koehler",k:"Holz Antiquitäten Fenster Türen"},
-    {n:"Sanitär Heizung Flaschnerei Jürgen Krepp",c:["Handwerk"],a:"Maulbronner Straße 28, 75031 Eppingen",t:"07138 6543",l:"krepp",k:"Sanitär Heizung Bad"},
-    {n:"Spedition Sauer GmbH & Co. KG",c:["Dienstleister"],a:"Im Gemminger Feld 6, 75031 Eppingen",t:"07138 931030",e:"info@sauer-gruppe.de",w:"sauer-gruppe.de",l:"sauer",k:"Spedition Transport Logistik"},
-    {n:"Spedition Karl Terzer",c:["Dienstleister"],a:"Im Gemminger Feld 10, 75031 Eppingen",t:"07138 6366",l:"terzer",k:"Spedition Transport Fuhrunternehmen"},
-    {n:"Steingestaltung Jürgen Wütherich",c:["Handwerk"],a:"Bahnhofsplatz 9, 74363 Güglingen",t:"07135 938453",e:"jw@wuetherich-stein.de",w:"wuetherich-stein.de",l:"wuetherich",k:"Steinmetz Bildhauer Stein"},
-    {n:"Töpferwerkstatt Jutta Gebhard",c:["Handwerk"],a:"Im Schelmengrund 1, 75031 Eppingen",t:"07138 67130",e:"gebhard.jutta@gmail.com",l:"gebhard",k:"Keramik Töpfern Keramiklädle"},
-    {n:"Volksbank Kraichgau Wiesloch-Sinsheim eG",c:["Banken & Finanzen"],a:"Güglinger Straße 1, 75031 Eppingen",e:"info@vbkraichgau.de",w:"vbkraichgau.de",l:"voba",x:"Geldautomat in Kleingartach.",k:"Bank Volksbank Geldautomat"}
-  ];
-  var esc=function(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});};
-  var norm=function(s){return (s||"").toLowerCase().replace(/ä/g,"ae").replace(/ö/g,"oe").replace(/ü/g,"ue").replace(/ß/g,"ss");};
-  var ico=function(id){return '<svg class="ico" aria-hidden="true"><use href="#'+id+'"/></svg>';};
-  var list=document.getElementById("members");
-  var html=M.map(function(m,i){
-    var initials=m.n.split(/\s+/).filter(function(w){return /^[A-ZÄÖÜ]/.test(w);}).slice(0,2).map(function(w){return w[0];}).join("");
-    var tile=m.l?'<div class="tile'+(m.d?' dark':'')+'"><img src="img/logo-'+m.l+'.jpg" alt="Logo '+esc(m.n)+'" loading="lazy"></div>':'<div class="tile"><span class="mono" aria-hidden="true">'+esc(initials)+'</span></div>';
-    var route="https://www.google.com/maps/dir/?api=1&destination="+encodeURIComponent(m.a);
-    return '<li class="member" data-i="'+i+'">'+tile+'<div class="m-body"><span class="m-cat">'+esc(m.c.join(" · "))+'</span><h3>'+esc(m.n)+'</h3>'+
-      (m.x?'<p class="m-addr">'+esc(m.x)+'</p>':'')+
-      '<p class="m-addr">'+esc(m.a)+'</p>'+
-      (m.t?'<div class="m-line">'+ico("i-phone")+'<span class="val">'+esc(m.t)+'</span><button class="copy" type="button" data-copy="'+esc(m.t)+'" aria-label="Telefonnummer von '+esc(m.n)+' kopieren">Kopieren</button></div>':'')+
-      (m.e?'<div class="m-line">'+ico("i-mail")+'<span class="val">'+esc(m.e)+'</span><button class="copy" type="button" data-copy="'+esc(m.e)+'" aria-label="E-Mail-Adresse von '+esc(m.n)+' kopieren">Kopieren</button></div>':'')+
-      '<div class="m-links">'+(m.w?'<a href="https://www.'+esc(m.w)+'" target="_blank" rel="noopener">'+ico("i-web")+'Website</a>':'')+'<a href="'+esc(route)+'" target="_blank" rel="noopener">'+ico("i-route")+'Route</a></div></div></li>';
-  }).join("");
-  list.innerHTML=html;
-  var cards=Array.prototype.slice.call(list.children);
-  var hay=M.map(function(m){return norm([m.n,m.c.join(" "),m.a,m.k||"",m.x||""].join(" "));});
-  var q=document.getElementById("q"),clear=document.getElementById("clear"),count=document.getElementById("count"),empty=document.getElementById("empty"),chips=Array.prototype.slice.call(document.querySelectorAll(".chip"));
-  var cat="";
-  function apply(){
-    var terms=norm(q.value.trim()).split(/\s+/).filter(Boolean),n=0;
-    cards.forEach(function(el,i){
-      var ok=(!cat||M[i].c.indexOf(cat)>-1)&&terms.every(function(t){return hay[i].indexOf(t)>-1;});
-      el.hidden=!ok;if(ok)n++;
-    });
-    count.textContent=n===1?"1 Betrieb":n+" Betriebe";
-    empty.hidden=n>0;clear.hidden=!q.value&&!cat;
-  }
-  function setCat(c){cat=c;chips.forEach(function(b){b.setAttribute("aria-pressed",(b.getAttribute("data-cat")||"")===c?"true":"false");});apply();}
-  q.addEventListener("input",apply);
-  chips.forEach(function(b){b.addEventListener("click",function(){setCat(b.getAttribute("data-cat")||"");});});
-  clear.addEventListener("click",function(){q.value="";setCat("");q.focus();});
-
-  // Suche im Hero
-  var finder=document.getElementById("finder"),fi=document.getElementById("finderInput");
-  function goSearch(v){q.value=v;setCat("");document.getElementById("mitglieder").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});}
-  finder.addEventListener("submit",function(e){e.preventDefault();goSearch(fi.value.trim());});
-  Array.prototype.forEach.call(document.querySelectorAll(".quick button"),function(b){b.addEventListener("click",function(){fi.value=b.getAttribute("data-q");goSearch(fi.value);});});
-
-  // Kopieren
-  document.addEventListener("click",function(e){
-    var b=e.target.closest&&e.target.closest(".copy");if(!b)return;
-    var label=b.textContent;
-    var done=function(t){b.textContent=t;b.setAttribute("data-done","true");setTimeout(function(){b.textContent=label;b.removeAttribute("data-done");},1800);};
-    var fallback=function(){var v=b.parentNode.querySelector(".val");if(v&&window.getSelection){var r=document.createRange();r.selectNodeContents(v);var s=window.getSelection();s.removeAllRanges();s.addRange(r);}done("Markiert");};
-    try{if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(b.getAttribute("data-copy")).then(function(){done("Kopiert");},fallback);}else{fallback();}}catch(err){fallback();}
-  });
-
-  // Menü
-  var toggle=document.getElementById("navToggle"),nav=document.getElementById("nav");
-  toggle.addEventListener("click",function(){var o=nav.getAttribute("data-open")==="true";nav.setAttribute("data-open",o?"false":"true");toggle.setAttribute("aria-expanded",o?"false":"true");});
-  nav.addEventListener("click",function(e){if(e.target.closest("a")){nav.setAttribute("data-open","false");toggle.setAttribute("aria-expanded","false");}});
-
-  // Aktiver Menüpunkt
-  var navLinks=Array.prototype.slice.call(nav.querySelectorAll('a[href^="#"]'));
-  if("IntersectionObserver" in window){
-    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){navLinks.forEach(function(a){a.setAttribute("aria-current",a.getAttribute("href")==="#"+x.target.id?"true":"false");});}});},{rootMargin:"-45% 0px -50% 0px"});
-    navLinks.forEach(function(a){var s=document.getElementById(a.getAttribute("href").slice(1));if(s)io.observe(s);});
-  }
-
-  // Dialoge
-  var art=document.getElementById("article"),artBody=document.getElementById("articleBody");
-  function openDlg(d){if(d.showModal){d.showModal();}else{d.setAttribute("open","");}}
-  Array.prototype.forEach.call(document.querySelectorAll("[data-article]"),function(b){
-    b.addEventListener("click",function(){var t=document.getElementById(b.getAttribute("data-article"));artBody.innerHTML="";artBody.appendChild(t.content.cloneNode(true));openDlg(art);art.querySelector(".d-inner").scrollTop=0;});
-  });
-  Array.prototype.forEach.call(document.querySelectorAll("[data-dialog]"),function(b){b.addEventListener("click",function(){openDlg(document.getElementById(b.getAttribute("data-dialog")));});});
-  Array.prototype.forEach.call(document.querySelectorAll("dialog"),function(d){
-    Array.prototype.forEach.call(d.querySelectorAll("[data-close]"),function(c){c.addEventListener("click",function(){if(d.close){d.close();}else{d.removeAttribute("open");}});});
-    d.addEventListener("click",function(e){if(e.target===d&&d.close)d.close();});
-  });
-
-  // Formular
-  var form=document.getElementById("form"),notice=document.getElementById("formNotice");
-  form.addEventListener("submit",function(e){
-    e.preventDefault();
-    if(!document.getElementById("f-betrieb").value.trim()||!document.getElementById("f-mail").value.trim()){notice.textContent="Bitte geben Sie mindestens Ihren Betrieb und Ihre E-Mail-Adresse an.";notice.hidden=false;return;}
-    notice.textContent="Testseite: Ihre Anfrage wurde nicht versendet. Schreiben Sie bitte an info@hgv-kleingartach.de, dann erhalten Sie die Beitrittserklärung.";notice.hidden=false;
-  });
-
-  // Hell / Dunkel
-  var root=document.documentElement,themeBtn=document.getElementById("themeBtn");
-  function isDark(){var t=root.getAttribute("data-theme");if(t)return t==="dark";return !!(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches);}
-  try{var stTheme=localStorage.getItem("hgv-theme");if(stTheme)root.setAttribute("data-theme",stTheme);}catch(e){}
-  function syncTheme(){themeBtn.setAttribute("aria-pressed",isDark()?"true":"false");}
-  syncTheme();
-  themeBtn.addEventListener("click",function(){var next=isDark()?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem("hgv-theme",next);}catch(e){}syncTheme();});
-
-  // Logo-Band
-  var track=document.getElementById("logoTrack");
-  if(track){
-    var withLogo=M.filter(function(m){return m.l;});
-    var oneSet=function(hidden){return withLogo.map(function(m){return '<a href="#mitglieder" tabindex="-1" data-q="'+esc(m.n)+'"'+(m.d?' class="dark"':'')+(hidden?' aria-hidden="true"':'')+'><img src="img/logo-'+m.l+'.jpg" alt="'+(hidden?'':esc(m.n))+'" loading="lazy"></a>';}).join("");};
-    track.innerHTML=oneSet(false)+oneSet(true);
-    track.addEventListener("click",function(e){var a=e.target.closest("a");if(!a)return;e.preventDefault();goSearch(a.getAttribute("data-q"));});
-  }
-
-  // Countdown
-  var target=new Date(2026,10,29,17,0,0);
-  function tickCd(){
-    var ms=target-new Date();var box=document.getElementById("countdown");if(!box)return;
-    if(ms<=0){box.textContent="Das Lichterfest hat begonnen.";return;}
-    document.getElementById("cd-d").textContent=Math.floor(ms/864e5);
-    document.getElementById("cd-h").textContent=Math.floor(ms%864e5/36e5);
-    document.getElementById("cd-m").textContent=Math.floor(ms%36e5/6e4);
-    document.getElementById("cd-s").textContent=String(Math.floor(ms%6e4/1e3)).padStart(2,"0");
-  }
-  tickCd();setInterval(tickCd,1000);
-
-  // Jahresrad
-  var YEAR=[[],[],
-    [{t:"Osterbrunnen am Kirchplatz",d:"Helferinnen des HGV schmücken den Brunnen mit bunten Eiern und frischem Grün."}],
-    [{t:"Weinstraßenfest mit Gewerbeschau",d:"Alle zwei Jahre auf der Zabergäustraße, 2017 und 2019 jeweils im April."}],
-    [{t:"25 Jahre HGV",d:"Jubiläumsfest mit Gewerbeschau am 17. Mai 2026 auf dem Schillerplatz."}],
-    [],
-    [{t:"Zu Gast bei",d:"Mitgliedsbetriebe öffnen ihre Türen, Auftakt am 9. Juli 2025 bei Faber Service."}],
-    [],[],[],
-    [{t:"Irish Folk Night",d:"Livemusik in der Stadthalle Kleingartach, der Termin 2026 folgt."},{t:"Aufbau der Weihnachtsbeleuchtung",d:"In der Woche vor dem 1. Advent, rund 5.000 Lichter am Baum."},{t:"Lichterfest am 1. Advent",d:"Sonntag, 29. November 2026, ab 17 Uhr am Kirchplatz. Vorschau, der Termin wird bestätigt."}],
-    [{t:"Weihnachtsverlosung",d:"Bei den Mitgliedsbetrieben, Details folgen."}]];
-  var MONTHS=["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"];
-  var wheel=document.getElementById("yearWheel"),detail=document.getElementById("yearDetail");
-  if(wheel){
-    var NS="http://www.w3.org/2000/svg",cx=200,cy=200,R=186,r=120,segs=[],labels=[],hubM,hubS;
-    var pt=function(rad,a){return [cx+rad*Math.cos(a*Math.PI/180),cy+rad*Math.sin(a*Math.PI/180)];};
-    var fmt=function(v){return v[0].toFixed(2)+" "+v[1].toFixed(2);};
-    var mk=function(tag,attrs){var n=document.createElementNS(NS,tag);for(var k in attrs){n.setAttribute(k,attrs[k]);}return n;};
-    var pick=function(i){
-      segs.forEach(function(p,j){p.classList.toggle("sel",j===i);});
-      labels.forEach(function(t,j){t.classList.toggle("sel",j===i);});
-      hubM.textContent=MONTHS[i];
-      hubS.textContent=YEAR[i].length?(YEAR[i].length===1?"1 Termin":YEAR[i].length+" Termine"):"keine feste Tradition";
-      detail.innerHTML="";
-      var h=document.createElement("h4");h.textContent=MONTHS[i];detail.appendChild(h);
-      if(!YEAR[i].length){var p0=document.createElement("p");p0.textContent="In diesem Monat steht keine feste HGV-Tradition im Kalender.";p0.style.color="var(--ink-soft)";detail.appendChild(p0);}
-      YEAR[i].forEach(function(ev){var d=document.createElement("div");d.className="yd";var b=document.createElement("b");b.textContent=ev.t;var s2=document.createElement("span");s2.textContent=ev.d;d.appendChild(b);d.appendChild(s2);detail.appendChild(d);});
-    };
-    for(var i=0;i<12;i++){(function(i){
-      var a0=-90+i*30+1.2,a1=a0+27.6,am=(a0+a1)/2,has=YEAR[i].length>0;
-      var g=mk("g",{tabindex:"0",role:"button","aria-label":MONTHS[i]+", "+(has?YEAR[i].length+(YEAR[i].length===1?" Termin":" Termine"):"keine Termine")});
-      var p=mk("path",{d:"M"+fmt(pt(R,a0))+" A"+R+" "+R+" 0 0 1 "+fmt(pt(R,a1))+" L"+fmt(pt(r,a1))+" A"+r+" "+r+" 0 0 0 "+fmt(pt(r,a0))+" Z","class":"seg"+(has?" has":"")});
-      var c=pt((R+r)/2,am),t=mk("text",{x:c[0].toFixed(2),y:(c[1]+5).toFixed(2),"text-anchor":"middle","class":"seg-l"+(has?" has":"")});
-      t.textContent=MONTHS[i].slice(0,3);
-      g.appendChild(p);g.appendChild(t);
-      g.addEventListener("click",function(){pick(i);});
-      g.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();pick(i);}});
-      wheel.appendChild(g);segs.push(p);labels.push(t);
-    })(i);}
-    wheel.appendChild(mk("circle",{cx:cx,cy:cy,r:r-12,"class":"hub"}));
-    hubM=mk("text",{x:cx,y:cy+2,"text-anchor":"middle","class":"hub-m"});wheel.appendChild(hubM);
-    hubS=mk("text",{x:cx,y:cy+28,"text-anchor":"middle","class":"hub-s"});wheel.appendChild(hubS);
-    pick(10);
-  }
-
-  // Frag den HGV (Vorschau)
-  var chat=document.getElementById("chatLog"),askForm=document.getElementById("askForm"),askIn=document.getElementById("askInput");
-  var STOP=" wer wo was wie wann ist sind macht machen gibt gibts es ein eine einen einem einer in im am an kleingartach eppingen der die das den dem des ich suche brauche finde fuer mit kann koennen bei habt hat mir und oder ihr auch noch mal bitte hier man jemand welche welcher welches ";
-  function el(tag,txt,cls){var e=document.createElement(tag);if(txt)e.textContent=txt;if(cls)e.className=cls;return e;}
-  function lnk(txt,href){var a=el("a",txt);a.href=href;return a;}
-  function bubble(who,parts){var d=el("div","","msg "+who);parts.forEach(function(n){d.appendChild(typeof n==="string"?document.createTextNode(n):n);});chat.appendChild(d);chat.scrollTop=chat.scrollHeight;return d;}
-  function answer(qs){
-    var n=norm(qs);
-    if(/lichterfest|advent|weihnacht|gluehwein/.test(n)){var days=Math.max(0,Math.ceil((target-new Date())/864e5));return ["Das Lichterfest ist für Sonntag, 29. November 2026 ab 17 Uhr am Kirchplatz vorgesehen. Das sind noch "+days+" Tage. Der Termin ist eine Vorschau und wird vom HGV bestätigt. ",lnk("Zu den Terminen","#termine")];}
-    if(/mitglied|beitr|antrag|aufnahme/.test(n))return ["Mitglied werden geht in drei Schritten: Beitrittserklärung anfordern, ausfüllen und an den HGV senden. Alle Details, auch zum Beitrag, stehen in der Beitrittserklärung. ",lnk("Beitrittserklärung anfordern","#mitglied-werden")];
-    if(/irish|folk|konzert|musik|kabarett/.test(n))return ["Die Irish Folk Night gibt es seit 2013 in der Stadthalle Kleingartach, Güglinger Straße 24. Der Termin für 2026 folgt."];
-    if(/oster|brunnen/.test(n))return ["Den Osterbrunnen am Kirchplatz schmücken Helferinnen des HGV jedes Frühjahr, 2026 am 18. März. ",lnk("Zum Beitrag","#aktuelles")];
-    if(/vorstand|kontakt|erreich|\bhgv\b/.test(n)&&!/betrieb/.test(n))return ["Sie erreichen den HGV unter 07138 6618 oder info@hgv-kleingartach.de, Sonnengasse 1. Vorstand ist Dieter Keppler. ",lnk("Zum Kontakt","#kontakt")];
-    var terms=n.replace(/[^a-z0-9 ]/g," ").split(/\s+/).filter(function(t){return t.length>2&&STOP.indexOf(" "+t+" ")<0;}).map(function(t){var s3=t.replace(/(en|er|e|n|s)$/,"");return s3.length>3?s3:t;});
-    if(!terms.length)return ["Fragen Sie zum Beispiel nach einem Handwerk, einem Geschäft oder einem Termin."];
-    var hits=M.map(function(m,i){var sc=0;terms.forEach(function(t){if(hay[i].indexOf(t)>-1)sc++;});return {m:m,s:sc};}).filter(function(x){return x.s>0;}).sort(function(a,b){return b.s-a.s;}).slice(0,4);
-    if(!hits.length)return ["Dazu finde ich auf dieser Seite nichts. Schauen Sie im ",lnk("Verzeichnis aller Betriebe","#mitglieder")," nach oder fragen Sie den HGV direkt."];
-    var ul=el("ul","","hits");
-    hits.forEach(function(x){var li=el("li");li.appendChild(el("b",x.m.n));li.appendChild(el("span",[x.m.a,x.m.t].filter(Boolean).join(" · ")));ul.appendChild(li);});
-    return [hits.length===1?"Dazu passt ein Betrieb:":"Dazu passen "+hits.length+" Betriebe:",ul];
-  }
-  function ask(qs){
-    if(!qs||!qs.trim())return;
-    bubble("me",[qs.trim()]);
-    var dots=el("span","","dots");dots.innerHTML="<i></i><i></i><i></i>";
-    var typing=bubble("bot",[dots]);
-    var wait=matchMedia("(prefers-reduced-motion: reduce)").matches?0:700;
-    setTimeout(function(){chat.removeChild(typing);bubble("bot",answer(qs));},wait);
-  }
-  askForm.addEventListener("submit",function(e){e.preventDefault();ask(askIn.value);askIn.value="";});
-  Array.prototype.forEach.call(document.querySelectorAll(".ask-chips button"),function(b){b.addEventListener("click",function(){ask(b.textContent);});});
-
-  // Nach oben
-  var toTop=document.getElementById("toTop");
-  window.addEventListener("scroll",function(){toTop.hidden=window.scrollY<900;},{passive:true});
-})();
-</script>
-
+<script src="app.js"></script>
 </body>
 </html>

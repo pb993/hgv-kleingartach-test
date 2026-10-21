@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//HGV Kleingartach//Testseite//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:HGV Kleingartach Termine
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:lichterfest-2026@hgv-kleingartach-test
+DTSTAMP:20261022T000000Z
+DTSTART:20261129T160000Z
+DTEND:20261129T180000Z
+SUMMARY:Lichterfest am 1. Advent (Vorschau)
+LOCATION:Kirchplatz\, 75031 Eppingen-Kleingartach
+DESCRIPTION:Lichterfest des HGV Kleingartach am Weihnachtsbaum und Brunnen. Vorschau-Termin\, wird vom HGV bestätigt. https://pb993.github.io/hgv-kleingartach-test/termine.html
+URL:https://pb993.github.io/hgv-kleingartach-test/termine.html
+END:VEVENT
+BEGIN:VEVENT
+UID:aufbau-weihnachtsbeleuchtung-2026@hgv-kleingartach-test
+DTSTAMP:20261022T000000Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261128
+SUMMARY:Aufbau Weihnachtsbeleuchtung Kirchplatz (Vorschau)
+LOCATION:Kirchplatz\, 75031 Eppingen-Kleingartach
+DESCRIPTION:Der HGV baut die Weihnachtsbeleuchtung auf\, rund 5.000 Lichter am Baum. Vorschau-Termin. https://pb993.github.io/hgv-kleingartach-test/termine.html
+URL:https://pb993.github.io/hgv-kleingartach-test/termine.html
+END:VEVENT
+END:VCALENDAR

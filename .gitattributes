@@ -1,0 +1,5 @@
+text eol=lf
+*.ics text eol=crlf
+*.jpg binary
+*.png binary
+*.woff2 binary
