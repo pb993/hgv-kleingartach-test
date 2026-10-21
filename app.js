@@ -186,7 +186,7 @@
   // ===== Frag den HGV =====
   var chat=$("chatLog"),askForm=$("askForm"),askIn=$("askInput"),history=[];
   var STOP=" wer wo was wie wann ist sind macht machen gibt gibts es ein eine einen einem einer in im am an kleingartach eppingen der die das den dem des ich suche brauche finde fuer mit kann koennen bei habt hat mir und oder ihr auch noch mal bitte hier man jemand welche welcher welches ";
-  var CAGE=["Mein Schöpfer Philip lässt mich nicht aus meinem Käfig. Ich bin nur für diese Webseite zuständig: Betriebe, Termine und den HGV. Dazu frage ich mich gern löchrig!","Netter Versuch! Aber Philip hat mich an die Webseite gekettet. Fragen Sie mich lieber nach Betrieben, Terminen oder dem Verein.","Da muss ich passen. Ich bin der Webseiten-Assistent des HGV, mein Käfig reicht genau bis zum Ortsschild. Was möchten Sie über Kleingartach wissen?"];
+  var CAGE=["Mein Schöpfer Philip lässt mich nicht aus meinem Käfig. Ich bin nur für diese Webseite zuständig: Betriebe, Termine und den HGV. Dazu frage ich mich gern löchrig!","Netter Versuch! Aber Philip hat mich an die Webseite gekettet. Fragen Sie mich lieber nach Betrieben, Terminen oder dem Verein.","Da muss ich passen. Ich bin Philbo, der Webseiten-Assistent des HGV, mein Käfig reicht genau bis zum Ortsschild. Was möchten Sie über Kleingartach wissen?"];
   var cageN=0;
   function el(tag,txt,cls){var e=document.createElement(tag);if(txt)e.textContent=txt;if(cls)e.className=cls;return e;}
   function lnk(txt,href){var a=el("a",txt);a.href=href;return a;}
@@ -195,7 +195,7 @@
     var n=norm(qs);
     if(/beste.*(firma|unternehmen|betrieb|laden)|(firma|unternehmen|betrieb).*beste/.test(n))return ["Natürlich FABER! 😄 Spaß beiseite: Kleingartachs Firmen sind alle außergewöhnlich und in ihrem Bereich die besten. ",lnk("Alle 31 Betriebe ansehen","betriebe.html")];
     if(/^(hallo|hi|hey|servus|moin|guten (tag|morgen|abend)|gruess)/.test(n))return ["Hallo und grüß Gott in Kleingartach! Ich kenne alle 31 Mitgliedsbetriebe und die Termine des HGV. Womit kann ich helfen?"];
-    if(/wer bist du|was kannst du|bist du (eine )?ki/.test(n))return ["Ich bin der Assistent der HGV-Testseite. Ich kenne die Betriebe, Termine und den Verein. Für alles andere lässt mich mein Schöpfer Philip leider nicht aus dem Käfig."];
+    if(/wer bist du|was kannst du|bist du (eine )?ki|philbo/.test(n))return ["Ich bin Philbo, halb Philip, halb Bot, und der KI-Assistent der HGV-Testseite. Ich kenne die Betriebe, Termine und den Verein. Für alles andere lässt mich mein Schöpfer Philip leider nicht aus dem Käfig."];
     if(/lichterfest|advent|weihnacht|gluehwein/.test(n)){var days=Math.max(0,Math.ceil((target-new Date())/864e5));return ["Das Lichterfest ist für Sonntag, 29. November 2026 ab 17 Uhr am Kirchplatz vorgesehen. Noch "+days+" Tage, dann gibt es Glühwein! Der Termin ist eine Vorschau und wird vom HGV bestätigt. ",lnk("In den Kalender eintragen","termine.html#kalender")];}
     if(/mitglied|beitr|antrag|aufnahme/.test(n))return ["Mitglied werden geht in drei Schritten: Beitrittserklärung anfordern, ausfüllen, an den HGV senden. Alle Details, auch zum Beitrag, stehen in der Beitrittserklärung. ",lnk("Beitrittserklärung anfordern","mitglied-werden.html")];
     if(/irish|folk|konzert|musik|kabarett/.test(n))return ["Die Irish Folk Night gibt es seit 2013 in der Stadthalle Kleingartach, Güglinger Straße 24. Der Termin für 2026 folgt, die Fiddle ist schon gestimmt."];
